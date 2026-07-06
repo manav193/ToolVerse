@@ -1,0 +1,58 @@
+name: Build & Verify
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build Static Site
+      run: npm run build
+
+    - name: Verify Sitemap
+      run: |
+        if [ ! -f "sitemap.xml" ]; then
+          echo "sitemap.xml was not generated!"
+          exit 1
+        fi
+
+    - name: Verify Tools Count
+      run: |
+        COUNT=$(ls -1 tools/*.html 2>/dev/null | wc -l)
+        if [ "$COUNT" -ne 70 ]; then
+          echo "Error: Expected 70 tools, but found $COUNT"
+          exit 1
+        fi
+        echo "Successfully built 70 tools."
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright E2E Tests
+      run: npx playwright test
+
+    - name: Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v11
+      with:
+        configPath: './lighthouserc.js'
+        uploadArtifacts: true # Save results as an action artifact
+        temporaryPublicStorage: true # Upload report to temporary public storage
+
+    # In a full setup, you could add an action here to deploy to GitHub Pages
+    # For Netlify/Vercel/Cloudflare, this CI acts as a pre-merge verification

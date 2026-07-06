@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>ToolVerse</h3>
+        <p>100% Free Online Tools for Everyone. No signup required.</p>
+        <button class="btn btn-secondary btn-sm" id="footer-install-btn" style="display:none; margin-top: 1rem;">Install Web App</button>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul aria-label="Quick Links">
+          <li><a href="{{BASE_URL}}/index.html">Home</a></li>
+          <li><a href="{{BASE_URL}}/pages/about.html">About</a></li>
+          <li><a href="{{BASE_URL}}/pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul aria-label="Legal Links">
+          <li><a href="{{BASE_URL}}/pages/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="{{BASE_URL}}/pages/terms.html">Terms of Service</a></li>
+          <li><a href="{{BASE_URL}}/pages/disclaimer.html">Disclaimer</a></li>
+          <li><a href="{{BASE_URL}}/pages/sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Get updates on new tools.</p>
+        <form id="newsletter-form" class="newsletter-form" onsubmit="event.preventDefault(); window.showToast('Subscribed successfully!', 'success');" aria-label="Newsletter Form">
+          <input type="email" placeholder="Your email address" required aria-label="Email Address">
+          <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year">2024</span> ToolVerse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<button id="back-to-top" class="back-to-top" aria-label="Scroll back to top">↑</button>
+
+<div id="cookie-banner" class="cookie-banner" style="display:none;" role="alert">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
+    <p style="margin:0;">We use cookies to enhance your experience, serve personalized ads, and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+    <div style="display:flex; gap: 0.5rem; flex-shrink: 0;">
+      <button id="cookie-decline" class="btn btn-secondary btn-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
+    </div>
+  </div>
+</div>

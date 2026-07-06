@@ -1,0 +1,17 @@
+[build]
+  # ToolVerse uses a custom build.js file to generate static HTML
+  command = "npm run build"
+  # Because the user specified keeping the output in the root, Netlify publishes the root
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  # Basic security headers for production
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

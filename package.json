@@ -1,0 +1,17 @@
+{
+  "name": "toolverse",
+  "version": "1.0.0",
+  "description": "ToolVerse - 100% Free Online Tools for Everyone",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx -y serve@latest . -l 3000"
+  },
+  "author": "ToolVerse",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.48.0"
+  }
+}
