@@ -85,7 +85,7 @@ module.exports = [
     metaTitle: 'Disclaimer | ToolVerse',
     metaDescription: 'Disclaimer for ToolVerse tools and services.',
     contentHTML: `
-      <p>The information and tools provided by ToolVerse on https://toolverse.com are for general informational and utility purposes only.</p>
+      <p>The information and tools provided by ToolVerse on https://manav193.github.io/ToolVerse are for general informational and utility purposes only.</p>
       
       <h2>Not Professional Advice</h2>
       <p>The calculators (e.g., BMI, Financial) and tools are provided for convenience and estimate purposes. They do not substitute for professional medical, financial, or legal advice. Always consult with a qualified professional for specific advice.</p>

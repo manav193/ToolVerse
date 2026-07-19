@@ -27,9 +27,9 @@ module.exports = [
     <button class="btn btn-primary" id="action-btn" style="margin-top: 1rem; width: 100%;" disabled>Merge PDFs</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/merge-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/merge-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/merge-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/merge-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/merge-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/merge-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -136,9 +136,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/split-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/split-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/split-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/split-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/split-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/split-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -268,9 +268,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/optimize-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/optimize-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/optimize-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/optimize-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/optimize-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/optimize-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -372,9 +372,9 @@ module.exports = [
     <button class="btn btn-primary" id="action-btn" style="margin-top: 1rem; width: 100%;" disabled>Convert to PDF</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/jpg-to-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/jpg-to-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/jpg-to-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/jpg-to-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/jpg-to-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/jpg-to-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -493,9 +493,9 @@ module.exports = [
     <div id="output-list" style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem;"></div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/pdf-to-jpg.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/pdf-to-jpg.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/pdf-to-jpg.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/pdf-to-jpg.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/pdf-to-jpg.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/pdf-to-jpg.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -623,9 +623,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/rotate-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/rotate-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/rotate-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/rotate-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/rotate-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/rotate-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -731,9 +731,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/delete-pdf-pages.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/delete-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/delete-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/delete-pdf-pages.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/delete-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/delete-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -856,9 +856,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/extract-pdf-pages.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/extract-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/extract-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/extract-pdf-pages.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/extract-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/extract-pdf-pages.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -976,9 +976,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/watermark-pdf.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/watermark-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/watermark-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/watermark-pdf.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/watermark-pdf.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/watermark-pdf.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {
@@ -1099,9 +1099,9 @@ module.exports = [
     </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/add-page-numbers.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/add-page-numbers.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/add-page-numbers.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/add-page-numbers.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/add-page-numbers.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/add-page-numbers.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>`,
     toolScript: `(function() {

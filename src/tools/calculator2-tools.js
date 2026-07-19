@@ -78,9 +78,9 @@ module.exports = [
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/salary-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/salary-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/salary-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/salary-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/salary-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/salary-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -235,9 +235,9 @@ Yearly,\${currentResults.yearly}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/tax-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/tax-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/tax-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/tax-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/tax-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/tax-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -357,9 +357,9 @@ Net Income: \${formatC(currentResults.net)}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/fuel-cost-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/fuel-cost-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/fuel-cost-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/fuel-cost-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/fuel-cost-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/fuel-cost-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -472,9 +472,9 @@ Total Cost: \${formatC(currentResults.totalCost)}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/time-duration-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/time-duration-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/time-duration-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/time-duration-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/time-duration-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/time-duration-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -579,13 +579,14 @@ Decimal Hours: \${currentResults.decHours}\`;
     <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; text-align: left;">
       <tbody>
         <tr style="border-bottom: 1px solid var(--border);"><th style="padding: 0.5rem; width: 50%;">Total Days</th><td style="padding: 0.5rem; font-weight: bold; color: var(--primary);" id="res-date-days"></td></tr>
+        <tr style="border-bottom: 1px solid var(--border);"><th style="padding: 0.5rem;">Calendar Difference</th><td style="padding: 0.5rem; font-weight: bold; color: var(--primary);" id="res-date-calendar"></td></tr>
         <tr style="border-bottom: 1px solid var(--border);"><th style="padding: 0.5rem;">Total Weeks</th><td style="padding: 0.5rem;" id="res-date-weeks"></td></tr>
         <tr style="border-bottom: 1px solid var(--border);"><th style="padding: 0.5rem;">Approx. Months</th><td style="padding: 0.5rem;" id="res-date-months"></td></tr>
         <tr style="border-bottom: 1px solid var(--border);"><th style="padding: 0.5rem;">Approx. Years</th><td style="padding: 0.5rem;" id="res-date-years"></td></tr>
       </tbody>
     </table>
     <div style="margin-top: 1rem;">
-      <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Note:</strong> Months are approximated as 30.436875 days and Years as 365.2425 days.</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Note:</strong> Calendar Difference is exact. Approx Months and Years are based on 30.43 and 365.24 days respectively.</p>
     </div>
     <div style="margin-top: 1rem; display: flex; gap: 1rem;">
       <button id="copy-date-btn" class="btn btn-secondary btn-sm">Copy Result</button>
@@ -593,9 +594,9 @@ Decimal Hours: \${currentResults.decHours}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/date-difference-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/date-difference-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/date-difference-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/date-difference-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/date-difference-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/date-difference-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -617,22 +618,48 @@ Decimal Hours: \${currentResults.decHours}\`;
       return;
     }
 
-    const startDate = new Date(start);
-    const endDate = new Date(end);
+    let startDate = new Date(start);
+    let endDate = new Date(end);
     
     // Set hours to 0 to avoid timezone DST issues
     startDate.setHours(0,0,0,0);
     endDate.setHours(0,0,0,0);
 
-    const diffMs = Math.abs(endDate - startDate);
-    const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
-    const diffWeeks = (diffDays / 7).toFixed(2);
-    const diffMonths = (diffDays / 30.436875).toFixed(2);
-    const diffYears = (diffDays / 365.2425).toFixed(2);
+    if (startDate > endDate) {
+      let temp = startDate;
+      startDate = endDate;
+      endDate = temp;
+    }
 
-    currentResults = { diffDays, diffWeeks, diffMonths, diffYears };
+    const diffMs = endDate - startDate;
+    const diffDaysTotal = Math.round(diffMs / (1000 * 60 * 60 * 24));
+    
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    let months = endDate.getMonth() - startDate.getMonth();
+    let days = endDate.getDate() - startDate.getDate();
 
-    document.getElementById('res-date-days').innerText = \`\${diffDays} days\`;
+    if (days < 0) {
+      months--;
+      // Get the number of days in the previous month of the end date
+      let prevMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0).getDate();
+      days += prevMonth;
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    const calendarDiff = \`\${years} years, \${months} months, \${days} days\`;
+
+    const diffWeeks = (diffDaysTotal / 7).toFixed(2);
+    const diffMonths = (diffDaysTotal / 30.436875).toFixed(2);
+    const diffYears = (diffDaysTotal / 365.2425).toFixed(2);
+
+    currentResults = { diffDaysTotal, calendarDiff, diffWeeks, diffMonths, diffYears };
+
+    document.getElementById('res-date-days').innerText = \`\${diffDaysTotal} days\`;
+    document.getElementById('res-date-calendar').innerText = calendarDiff;
     document.getElementById('res-date-weeks').innerText = \`\${diffWeeks} weeks\`;
     document.getElementById('res-date-months').innerText = \`\${diffMonths} months\`;
     document.getElementById('res-date-years').innerText = \`\${diffYears} years\`;
@@ -648,10 +675,11 @@ Decimal Hours: \${currentResults.decHours}\`;
 
   copyBtn.addEventListener('click', () => {
     const text = \`Date Difference:
-\${currentResults.diffDays} days
-\${currentResults.diffWeeks} weeks
-\${currentResults.diffMonths} months
-\${currentResults.diffYears} years\`;
+Total Days: \${currentResults.diffDaysTotal}
+Calendar: \${currentResults.calendarDiff}
+Weeks: \${currentResults.diffWeeks}
+Months: \${currentResults.diffMonths}
+Years: \${currentResults.diffYears}\`;
     if(window.copyToClipboard) window.copyToClipboard(text);
     else navigator.clipboard.writeText(text).then(()=>alert('Copied!'));
   });
@@ -735,9 +763,9 @@ Decimal Hours: \${currentResults.decHours}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/gpa-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/gpa-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/gpa-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/gpa-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/gpa-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/gpa-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -879,9 +907,9 @@ Final GPA: \${currentResults.gpa.toFixed(3)}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/grade-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/grade-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/grade-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/grade-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/grade-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/grade-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -991,9 +1019,9 @@ Final GPA: \${currentResults.gpa.toFixed(3)}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/marks-percentage-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/marks-percentage-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/marks-percentage-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/marks-percentage-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/marks-percentage-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/marks-percentage-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -1129,9 +1157,9 @@ Final GPA: \${currentResults.gpa.toFixed(3)}\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/calorie-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/calorie-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/calorie-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/calorie-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/calorie-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/calorie-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,
@@ -1264,9 +1292,9 @@ Target Goal: \${Math.round(currentResults.goalCal)} kcal\`;
   </div>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/bmr-calculator')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/bmr-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/bmr-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/bmr-calculator')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/bmr-calculator" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/bmr-calculator" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
     `,

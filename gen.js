@@ -474,9 +474,9 @@ const out = tools_data.map(t => {
         '    </div>',
         '</div>',
         '<div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">',
-        '    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard(\\'https://toolverse.com/tools/' + t.slug + '.html\\')">🔗 Copy URL</button>',
-        '    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/' + t.slug + '.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>',
-        '    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/' + t.slug + '.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>',
+        '    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard(\\'https://manav193.github.io/ToolVerse/tools/' + t.slug + '.html\\')">🔗 Copy URL</button>',
+        '    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/' + t.slug + '.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>',
+        '    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/' + t.slug + '.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>',
         '    <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast(\\'Issue reported. Thank you!\\', \\'success\\')">⚠️ Report Issue</button>',
         '</div>'
     ].join('\\n');

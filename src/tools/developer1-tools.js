@@ -35,9 +35,9 @@ module.exports = [
     <span id="json-status" style="margin-left: 1rem; font-weight: bold;"></span>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/json-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/json-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/json-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/json-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/json-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/json-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -114,9 +114,9 @@ module.exports = [
     <button id="copy-xml-btn" class="btn btn-secondary">Copy Output</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/xml-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/xml-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/xml-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/xml-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/xml-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/xml-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -198,9 +198,9 @@ module.exports = [
     <button id="copy-html-btn" class="btn btn-secondary">Copy Output</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/html-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/html-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/html-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/html-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/html-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/html-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -269,9 +269,9 @@ module.exports = [
     <button id="copy-css-btn" class="btn btn-secondary">Copy Output</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/css-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/css-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/css-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/css-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/css-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/css-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -340,9 +340,9 @@ module.exports = [
     <button id="copy-js-btn" class="btn btn-secondary">Copy Output</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/javascript-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/javascript-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/javascript-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/javascript-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/javascript-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/javascript-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -412,9 +412,9 @@ module.exports = [
     <span id="css-min-status" style="margin-left: 1rem; font-weight: bold; color: var(--text-color);"></span>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/css-minifier.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/css-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/css-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/css-minifier.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/css-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/css-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -480,9 +480,9 @@ module.exports = [
     <span id="js-min-status" style="margin-left: 1rem; font-weight: bold; color: var(--text-color);"></span>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/javascript-minifier.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/javascript-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/javascript-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/javascript-minifier.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/javascript-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/javascript-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -551,9 +551,9 @@ module.exports = [
     <span id="html-min-status" style="margin-left: 1rem; font-weight: bold; color: var(--text-color);"></span>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/html-minifier.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/html-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/html-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/html-minifier.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/html-minifier.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/html-minifier.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -618,9 +618,9 @@ module.exports = [
     <button id="copy-sql-btn" class="btn btn-secondary">Copy Output</button>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/sql-formatter.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/sql-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/sql-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/sql-formatter.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/sql-formatter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/sql-formatter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,
@@ -695,9 +695,9 @@ module.exports = [
     <span id="regex-status" style="margin-left: 1rem; font-weight: bold;"></span>
 </div>
 <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/regex-tester.html')">🔗 Copy URL</button>
-    <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/regex-tester.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/regex-tester.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+    <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/regex-tester.html')">🔗 Copy URL</button>
+    <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/regex-tester.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/regex-tester.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
     <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
 </div>
 `,

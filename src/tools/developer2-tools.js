@@ -31,9 +31,9 @@ module.exports = [
             <textarea id="uuid-output" class="tool-textarea" rows="10" readonly></textarea>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/uuid-generator.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/uuid-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/uuid-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/uuid-generator.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/uuid-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/uuid-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -115,9 +115,9 @@ module.exports = [
             </div>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/hash-generator.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/hash-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/hash-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/hash-generator.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/hash-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/hash-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -200,9 +200,9 @@ module.exports = [
             <textarea id="b64enc-output" class="tool-textarea" rows="6" readonly></textarea>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/base64-encode.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/base64-encode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/base64-encode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/base64-encode.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/base64-encode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/base64-encode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -253,9 +253,9 @@ module.exports = [
             <textarea id="b64dec-output" class="tool-textarea" rows="6" readonly></textarea>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/base64-decode.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/base64-decode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/base64-decode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/base64-decode.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/base64-decode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/base64-decode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -314,9 +314,9 @@ module.exports = [
             <textarea id="url-output" class="tool-textarea" rows="5" readonly></textarea>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/url-encode-decode.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/url-encode-decode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/url-encode-decode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/url-encode-decode.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/url-encode-decode.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/url-encode-decode.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -386,9 +386,9 @@ module.exports = [
             <textarea id="jwt-payload" class="tool-textarea" rows="8" readonly style="font-family: monospace;"></textarea>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/jwt-decoder.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/jwt-decoder.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/jwt-decoder.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/jwt-decoder.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/jwt-decoder.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/jwt-decoder.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -487,9 +487,9 @@ module.exports = [
             </div>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/timestamp-converter.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/timestamp-converter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/timestamp-converter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/timestamp-converter.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/timestamp-converter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/timestamp-converter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -569,9 +569,9 @@ module.exports = [
             </div>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/qr-code-generator.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/qr-code-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/qr-code-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/qr-code-generator.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/qr-code-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/qr-code-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -665,9 +665,9 @@ module.exports = [
             </div>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/barcode-generator.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/barcode-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/barcode-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/barcode-generator.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/barcode-generator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/barcode-generator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,
@@ -771,9 +771,9 @@ module.exports = [
             </div>
         </div>
         <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/color-converter.html')">🔗 Copy URL</button>
-            <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/color-converter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/color-converter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+            <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/color-converter.html')">🔗 Copy URL</button>
+            <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/color-converter.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/color-converter.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
             <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
         </div>
         `,

@@ -98,9 +98,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/emi-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/emi-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/emi-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/emi-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/emi-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/emi-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -119,14 +119,14 @@ const tools = [
             const rate = parseFloat(rateEl.value);
             const years = parseFloat(tenureEl.value);
 
-            if (!P || P <= 0 || !rate || rate <= 0 || !years || years <= 0) {
-                alert("Please enter valid positive numbers for all fields.");
+            if (isNaN(P) || P <= 0 || isNaN(rate) || rate < 0 || isNaN(years) || years <= 0) {
+                alert("Please enter valid positive numbers for all fields. Rate can be 0.");
                 return;
             }
 
             const r = rate / 12 / 100;
             const n = years * 12;
-            const emi = P * r * (Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const emi = r === 0 ? (P / n) : (P * r * (Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1));
             
             const totalAmount = emi * n;
             const totalInterest = totalAmount - P;
@@ -262,9 +262,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/sip-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/sip-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/sip-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/sip-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/sip-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/sip-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -283,14 +283,14 @@ const tools = [
             const rate = parseFloat(rateEl.value);
             const years = parseFloat(yearsEl.value);
 
-            if (!P || P <= 0 || !rate || rate <= 0 || !years || years <= 0) {
-                alert("Please enter valid positive numbers.");
+            if (isNaN(P) || P <= 0 || isNaN(rate) || rate < 0 || isNaN(years) || years <= 0) {
+                alert("Please enter valid positive numbers. Rate can be 0.");
                 return;
             }
 
             const i = rate / 12 / 100;
             const n = years * 12;
-            const M = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+            const M = i === 0 ? (P * n) : (P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i));
             
             const invested = P * n;
             const returns = M - invested;
@@ -415,9 +415,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/loan-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/loan-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/loan-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/loan-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/loan-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/loan-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -436,13 +436,13 @@ const tools = [
             const rate = parseFloat(rateEl.value);
             const n = parseFloat(monthsEl.value);
 
-            if (!P || P <= 0 || !rate || rate <= 0 || !n || n <= 0) {
-                alert("Please enter valid positive numbers.");
+            if (isNaN(P) || P <= 0 || isNaN(rate) || rate < 0 || isNaN(n) || n <= 0) {
+                alert("Please enter valid positive numbers. Rate can be 0.");
                 return;
             }
 
             const r = rate / 12 / 100;
-            const pmt = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const pmt = r === 0 ? (P / n) : (P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1));
             
             const totalAmount = pmt * n;
             const totalInterest = totalAmount - P;
@@ -575,9 +575,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/gst-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/gst-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/gst-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/gst-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/gst-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/gst-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -707,9 +707,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/discount-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/discount-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/discount-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/discount-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/discount-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/discount-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -834,9 +834,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/profit-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/profit-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/profit-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/profit-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/profit-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/profit-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -961,9 +961,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/margin-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/margin-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/margin-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/margin-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/margin-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/margin-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -1092,9 +1092,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/percentage-difference-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/percentage-difference-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/percentage-difference-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/percentage-difference-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/percentage-difference-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/percentage-difference-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -1250,9 +1250,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/compound-interest-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/compound-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/compound-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/compound-interest-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/compound-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/compound-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>
@@ -1397,9 +1397,9 @@ const tools = [
         </div>
     </div>
     <div class="tool-actions" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://toolverse.com/tools/simple-interest-calculator.html')">🔗 Copy URL</button>
-        <a href="https://twitter.com/intent/tweet?url=https://toolverse.com/tools/simple-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://toolverse.com/tools/simple-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
+        <button class="btn btn-secondary btn-sm" onclick="window.copyToClipboard('https://manav193.github.io/ToolVerse/tools/simple-interest-calculator.html')">🔗 Copy URL</button>
+        <a href="https://twitter.com/intent/tweet?url=https://manav193.github.io/ToolVerse/tools/simple-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">🐦 Twitter</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://manav193.github.io/ToolVerse/tools/simple-interest-calculator.html" target="_blank" class="btn btn-secondary btn-sm">📘 Facebook</a>
         <button class="btn btn-ghost btn-sm" style="margin-left: auto;" onclick="window.showToast('Issue reported. Thank you!', 'success')">⚠️ Report Issue</button>
     </div>
 </div>

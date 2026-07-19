@@ -28,7 +28,7 @@ const adsSidebar = fs.readFileSync(path.join(__dirname, 'components', 'adsense-s
 const adsBottom = fs.readFileSync(path.join(__dirname, 'components', 'adsense-bottom.html'), 'utf8');
 
 const sidebarWithAds = sidebarComponent.replace('<!-- ADSENSE_SIDEBAR -->', adsSidebar);
-const baseUrl = 'https://toolverse.com';
+const baseUrl = 'https://manav193.github.io/ToolVerse';
 
 // Ensure directories exist
 ['tools', 'pages', 'icons'].forEach(dir => {

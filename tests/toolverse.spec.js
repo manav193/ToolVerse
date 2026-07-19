@@ -86,7 +86,7 @@ test.describe('ToolVerse Automated E2E Tests', () => {
     if (toolUrls.length === 0) return;
     
     // Convert prod URL to local URL
-    const localUrl = toolUrls[0].replace('https://toolverse.com', '');
+    const localUrl = toolUrls[0].replace('https://manav193.github.io/ToolVerse', '');
     await page.goto(localUrl);
 
     // Assert Title exists
@@ -99,7 +99,7 @@ test.describe('ToolVerse Automated E2E Tests', () => {
 
     // Assert Canonical Link
     const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
-    expect(canonical).toContain('https://toolverse.com/tools/');
+    expect(canonical).toContain('https://manav193.github.io/ToolVerse/tools/');
   });
 
   test('404 page works', async ({ page }) => {
@@ -109,7 +109,7 @@ test.describe('ToolVerse Automated E2E Tests', () => {
     const fallbackResponse = await page.goto('/404.html');
     expect(fallbackResponse.status()).toBe(200);
     const title = await page.title();
-    expect(title).toContain('404');
+    expect(title).toContain('Page Not Found');
   });
 
   test('No broken internal links on the homepage', async ({ page }) => {
