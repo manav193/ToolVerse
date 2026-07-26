@@ -63,31 +63,43 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', (e) => {
             const val = e.target.value.toLowerCase().trim();
             currentFocus = -1;
+            searchInput.removeAttribute('aria-activedescendant');
             if (!val) {
                 searchResults.style.display = 'none';
+                searchInput.setAttribute('aria-expanded', 'false');
                 return;
             }
             
-            const matches = window.TOOLVERSE_TOOLS.filter(t => 
-                t.name.toLowerCase().includes(val) || 
-                t.category.toLowerCase().includes(val)
+            const matches = window.TOOLVERSE_TOOLS.filter(t =>
+                String(t.name || '').toLowerCase().includes(val) ||
+                String(t.category || '').toLowerCase().includes(val)
             ).slice(0, 5);
+            const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             
             if (matches.length > 0) {
                 searchResults.innerHTML = matches.map((t, idx) => `
                     <a href="tools/${t.slug}.html" class="search-result-item" role="option" id="res-${idx}">
-                        <span style="font-size:1.2rem; margin-right:0.5rem;">${t.icon}</span> 
-                        <strong>${t.name.replace(new RegExp(val, 'gi'), match => `<mark>${match}</mark>`)}</strong> 
-                        <span style="font-size:0.8rem; color:var(--text-secondary); float:right;">${t.category}</span>
+                        <span class="search-result-icon">${t.icon}</span>
+                        <strong>${t.name.replace(new RegExp(escapedVal, 'gi'), match => `<mark>${match}</mark>`)}</strong>
+                        <span class="search-result-category">${t.category || 'Tool'}</span>
                     </a>
                 `).join('');
             } else {
-                searchResults.innerHTML = '<div class="search-result-item" style="color:var(--text-secondary);" role="option">No tools found for your search.</div>';
+                searchResults.innerHTML = '<div class="search-result-item" role="option">No tools found for your search.</div>';
             }
             searchResults.style.display = 'block';
+            searchInput.setAttribute('aria-expanded', 'true');
         });
         
         searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchResults.style.display = 'none';
+                searchInput.setAttribute('aria-expanded', 'false');
+                searchInput.removeAttribute('aria-activedescendant');
+                currentFocus = -1;
+                return;
+            }
+
             const items = searchResults.querySelectorAll('.search-result-item');
             if (!items || items.length === 0) return;
             
@@ -115,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentFocus >= x.length) currentFocus = 0;
             if (currentFocus < 0) currentFocus = (x.length - 1);
             x[currentFocus].classList.add("active");
+            x[currentFocus].setAttribute('aria-selected', 'true');
             x[currentFocus].scrollIntoView({ block: 'nearest' });
             searchInput.setAttribute('aria-activedescendant', x[currentFocus].id);
         }
@@ -122,17 +135,76 @@ document.addEventListener('DOMContentLoaded', () => {
         function removeActive(x) {
             for (let i = 0; i < x.length; i++) {
                 x[i].classList.remove("active");
+                x[i].setAttribute('aria-selected', 'false');
             }
         }
         
         document.addEventListener('click', (e) => {
-            if (e.target !== searchInput && e.target !== searchResults) {
+            if (e.target !== searchInput && !searchResults.contains(e.target)) {
                 searchResults.style.display = 'none';
+                searchInput.setAttribute('aria-expanded', 'false');
+                searchInput.removeAttribute('aria-activedescendant');
             }
         });
     }
 
-    // 4. FAQ Accordion
+    // 4. Tools Arcade category filtering
+    const arcadeFilters = Array.from(document.querySelectorAll('.arcade-filter'));
+    const arcadeCards = Array.from(document.querySelectorAll('.arcade-tool-card'));
+    const arcadeStatus = document.getElementById('arcade-filter-status');
+
+    if (arcadeFilters.length > 0 && arcadeCards.length > 0) {
+        const applyArcadeFilter = (filterValue) => {
+            const selectedFilter = arcadeFilters.some(button => button.dataset.filter === filterValue) ? filterValue : 'all';
+            let visibleCount = 0;
+
+            arcadeFilters.forEach(button => {
+                const isActive = button.dataset.filter === selectedFilter;
+                button.classList.toggle('active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+
+            arcadeCards.forEach(card => {
+                const isVisible = selectedFilter === 'all' || card.dataset.category === selectedFilter;
+                card.hidden = !isVisible;
+                if (isVisible) visibleCount++;
+            });
+
+            if (arcadeStatus) {
+                const activeButton = arcadeFilters.find(button => button.dataset.filter === selectedFilter);
+                const filterLabel = activeButton ? activeButton.querySelector('span').textContent : 'All tools';
+                arcadeStatus.textContent = selectedFilter === 'all'
+                    ? `Showing all ${visibleCount} tools`
+                    : `Showing ${visibleCount} ${filterLabel.toLowerCase()}`;
+            }
+        };
+
+        arcadeFilters.forEach((button, index) => {
+            button.addEventListener('click', () => applyArcadeFilter(button.dataset.filter));
+            button.addEventListener('keydown', event => {
+                let nextIndex = null;
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % arcadeFilters.length;
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + arcadeFilters.length) % arcadeFilters.length;
+                if (event.key === 'Home') nextIndex = 0;
+                if (event.key === 'End') nextIndex = arcadeFilters.length - 1;
+                if (nextIndex !== null) {
+                    event.preventDefault();
+                    arcadeFilters[nextIndex].focus();
+                    arcadeFilters[nextIndex].click();
+                }
+            });
+        });
+
+        const applyHashFilter = () => {
+            const hashFilter = window.location.hash.slice(1);
+            if (arcadeFilters.some(button => button.dataset.filter === hashFilter)) applyArcadeFilter(hashFilter);
+        };
+
+        window.addEventListener('hashchange', applyHashFilter);
+        applyHashFilter();
+    }
+
+    // 5. FAQ Accordion
     const faqs = document.querySelectorAll('.faq-question');
     faqs.forEach(faq => {
         faq.addEventListener('click', () => {
@@ -347,55 +419,81 @@ document.addEventListener('DOMContentLoaded', () => {
     if(btnInstallHeader) btnInstallHeader.addEventListener('click', handleInstall);
     if(btnInstallFooter) btnInstallFooter.addEventListener('click', handleInstall);
 
-    // 12. Clean Hero Wrench Scroll
+    // 12. Restrained, scroll-linked hero motion
     const heroSection = document.getElementById('hero-section');
     const heroWrench = document.getElementById('hero-wrench-container');
     const heroContent = document.querySelector('.hero-content');
 
     if (heroSection && heroWrench && heroContent) {
-        let currentScale = 1;
-        let currentRot = 45;
-        let targetScale = 1;
-        let targetRot = 45;
-        let currentOpacity = 1;
-        let targetOpacity = 1;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const mobileLayout = window.matchMedia('(max-width: 768px)');
+        let frameRequested = false;
+        let metricsDirty = true;
+        let heroStart = 0;
+        let heroTravel = 1;
+        let previousProgress = -1;
 
-        const lerp = (start, end, factor) => start + (end - start) * factor;
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+        const measureHero = () => {
+            const heroRect = heroSection.getBoundingClientRect();
+            heroStart = heroRect.top + window.scrollY;
+            heroTravel = Math.max(heroSection.offsetHeight - window.innerHeight, 1);
+            metricsDirty = false;
+        };
 
-        // Init immediately
-        heroWrench.style.transform = `scale(${currentScale}) rotate(${currentRot}deg)`;
+        const resetHeroMotion = () => {
+            heroWrench.style.removeProperty('transform');
+            heroContent.style.removeProperty('transform');
+            heroContent.style.removeProperty('opacity');
+            heroSection.style.removeProperty('--hero-ambient-x');
+            heroSection.style.removeProperty('--hero-ambient-y');
+            heroSection.style.removeProperty('--hero-ambient-opacity');
+            previousProgress = -1;
+        };
 
         const renderHero = () => {
-            const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (!isReducedMotion) {
-                const scrollY = window.scrollY;
-                const heroHeight = heroSection.offsetHeight - window.innerHeight;
-                
-                let progress = 0;
-                if (heroHeight > 0) {
-                    progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
-                }
-
-                const maxScale = window.innerWidth < 768 ? 1.5 : 2.5;
-                const maxRot = 4;
-                
-                targetScale = 1 + (progress * (maxScale - 1));
-                targetRot = 45 + (progress * maxRot);
-                targetOpacity = Math.max(1 - (progress * 1.5), 0);
-                
-                currentScale = lerp(currentScale, targetScale, 0.1);
-                currentRot = lerp(currentRot, targetRot, 0.1);
-                currentOpacity = lerp(currentOpacity, targetOpacity, 0.1);
-                
-                heroWrench.style.transform = `scale(${currentScale}) rotate(${currentRot}deg)`;
-                heroContent.style.opacity = currentOpacity;
-            } else {
-                heroWrench.style.transform = `scale(1) rotate(45deg)`;
-                heroContent.style.opacity = 1;
+            frameRequested = false;
+            if (reducedMotion.matches || mobileLayout.matches) {
+                resetHeroMotion();
+                return;
             }
-            requestAnimationFrame(renderHero);
+
+            if (metricsDirty) measureHero();
+            const progress = clamp((window.scrollY - heroStart) / heroTravel, 0, 1);
+            if (Math.abs(progress - previousProgress) < 0.001) return;
+
+            const scale = 1 + (progress * 0.12);
+            const rotation = -12 + (progress * 3);
+            const translateX = -28 + (progress * -26);
+            const translateY = -24 + (progress * -7);
+
+            heroWrench.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${rotation}deg) scale(${scale})`;
+            heroContent.style.transform = `translate3d(0, ${progress * -24}px, 0)`;
+            heroContent.style.opacity = String(1 - (progress * 0.34));
+            heroSection.style.setProperty('--hero-ambient-x', `${progress * -3}%`);
+            heroSection.style.setProperty('--hero-ambient-y', `${progress * -1.25}%`);
+            heroSection.style.setProperty('--hero-ambient-opacity', String(progress * 0.28));
+            previousProgress = progress;
         };
-        requestAnimationFrame(renderHero);
+
+        const requestHeroFrame = () => {
+            if (!frameRequested) {
+                frameRequested = true;
+                requestAnimationFrame(renderHero);
+            }
+        };
+
+        const refreshHeroMetrics = () => {
+            metricsDirty = true;
+            requestHeroFrame();
+        };
+
+        window.addEventListener('scroll', requestHeroFrame, { passive: true });
+        window.addEventListener('resize', refreshHeroMetrics, { passive: true });
+        window.addEventListener('load', refreshHeroMetrics, { once: true });
+        reducedMotion.addEventListener('change', refreshHeroMetrics);
+        mobileLayout.addEventListener('change', refreshHeroMetrics);
+        requestHeroFrame();
     }
 });
 

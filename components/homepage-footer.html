@@ -1,0 +1,43 @@
+<footer class="footer homepage-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="{{BASE_URL}}/index.html" class="footer-wordmark" aria-label="ToolVerse home">ToolVerse</a>
+        <p class="footer-description">Fast, private browser tools for everyday work.</p>
+        <button class="btn btn-secondary btn-sm" id="footer-install-btn" style="display:none;" aria-label="Install ToolVerse web app">Install Web App</button>
+      </div>
+      <nav class="footer-nav" aria-labelledby="footer-explore-heading">
+        <h2 id="footer-explore-heading">Explore</h2>
+        <ul>
+          <li><a href="{{BASE_URL}}/index.html">Home</a></li>
+          <li><a href="{{BASE_URL}}/index.html#tools-arcade">Tools</a></li>
+          <li><a href="{{BASE_URL}}/pages/about.html">About</a></li>
+          <li><a href="{{BASE_URL}}/pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-labelledby="footer-legal-heading">
+        <h2 id="footer-legal-heading">Legal</h2>
+        <ul>
+          <li><a href="{{BASE_URL}}/pages/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="{{BASE_URL}}/pages/terms.html">Terms</a></li>
+          <li><a href="{{BASE_URL}}/pages/disclaimer.html">Disclaimer</a></li>
+          <li><a href="{{BASE_URL}}/pages/sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{CURRENT_YEAR}} ToolVerse. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<button id="back-to-top" class="back-to-top" aria-label="Scroll back to top">↑</button>
+
+<div id="cookie-banner" class="cookie-banner" style="display:none;" role="alert">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
+    <p style="margin:0;">We use cookies to enhance your experience, serve personalized ads, and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+    <div style="display:flex; gap: 0.5rem; flex-shrink: 0;">
+      <button id="cookie-decline" class="btn btn-secondary btn-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-primary btn-sm">Accept</button>
+    </div>
+  </div>
+</div>

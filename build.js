@@ -21,6 +21,7 @@ for (const file of toolFiles) {
 // Read components
 const headerComponent = fs.readFileSync(path.join(__dirname, 'components', 'header.html'), 'utf8');
 const footerComponent = fs.readFileSync(path.join(__dirname, 'components', 'footer.html'), 'utf8');
+const homepageFooterComponent = fs.readFileSync(path.join(__dirname, 'components', 'homepage-footer.html'), 'utf8');
 const sidebarComponent = fs.readFileSync(path.join(__dirname, 'components', 'sidebar.html'), 'utf8');
 const adsTop = fs.readFileSync(path.join(__dirname, 'components', 'adsense-top.html'), 'utf8');
 const adsMid = fs.readFileSync(path.join(__dirname, 'components', 'adsense-mid.html'), 'utf8');
@@ -387,24 +388,47 @@ const buildApp = async () => {
     <script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>
     `;
 
-    // Process featured / trending / latest tools
-    const featuredTools = homepageData.featuredSlugs ? homepageData.featuredSlugs.map(slug => tools.find(t => t.slug === slug)).filter(Boolean) : tools.slice(0, 3);
-    const trendingTools = homepageData.trendingSlugs ? homepageData.trendingSlugs.map(slug => tools.find(t => t.slug === slug)).filter(Boolean) : tools.slice(3, 6);
-    
-    const toolCardHTML = (t) => `
-        <a href="tools/${t.slug}.html" class="tool-card animate-on-scroll" aria-label="${t.name}">
-            <div class="tool-card-icon">${t.icon}</div>
-            <h3>${t.name}</h3>
-            <p>${t.shortDesc}</p>
-        </a>`;
+    const getToolCategory = (tool) => {
+        const rawCategory = String(tool.category || '').trim();
+        return categories.find(category =>
+            category.slug.toLowerCase() === rawCategory.toLowerCase() ||
+            category.name.toLowerCase() === rawCategory.toLowerCase()
+        ) || {
+            slug: rawCategory.toLowerCase().replace(/\s+tools?$/, '').replace(/[^a-z0-9]+/g, '-') || 'utility',
+            name: tool.categoryName || rawCategory || 'Utility Tools',
+            icon: '🔧',
+            color: '#6366f1'
+        };
+    };
 
-    const categoriesHTML = categories.map(c => `
-        <a href="#${c.slug}" class="category-card animate-on-scroll" style="--cat-color: ${c.color}" aria-label="${c.name}">
-            <div class="category-icon">${c.icon}</div>
-            <h3>${c.name}</h3>
-            <p>${c.description}</p>
-        </a>
-    `).join('');
+    const catalogCategories = categories.filter(category =>
+        tools.some(tool => getToolCategory(tool).slug === category.slug)
+    );
+
+    const arcadeFiltersHTML = catalogCategories.map(category => {
+        const count = tools.filter(tool => getToolCategory(tool).slug === category.slug).length;
+        return `<button type="button" class="arcade-filter" id="${category.slug}" data-filter="${category.slug}" aria-pressed="false" aria-controls="tools-arcade-grid">
+            <span>${category.name}</span><span class="arcade-filter-count" aria-hidden="true">${count}</span>
+        </button>`;
+    }).join('');
+
+    const arcadeCardsHTML = tools.map(tool => {
+        const category = getToolCategory(tool);
+        const categoryName = tool.categoryName || category.name;
+        const toolName = tool.name || tool.title || tool.slug.replace(/-/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
+        const toolDescription = tool.shortDesc || tool.description || 'Open this browser-powered tool.';
+        const rawIcon = String(tool.icon || '').trim();
+        const catalogIcon = !rawIcon || /\bfa(?:s|r|b|l|d)?\b|fa-|undefined|null/i.test(rawIcon) ? category.icon : rawIcon;
+        return `<a href="tools/${tool.slug}.html" class="arcade-tool-card" data-category="${category.slug}" aria-label="Open ${toolName}, ${categoryName}">
+            <div class="arcade-card-meta">
+                <span class="arcade-card-icon" aria-hidden="true">${catalogIcon}</span>
+                <span class="arcade-card-category">${categoryName}</span>
+            </div>
+            <h3>${toolName}</h3>
+            <p>${toolDescription}</p>
+            <span class="arcade-card-action" aria-hidden="true">Open tool <span>→</span></span>
+        </a>`;
+    }).join('');
 
     let homepageHTML = `<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -418,104 +442,83 @@ const buildApp = async () => {
     <link rel="stylesheet" href="css/style.css">
     ${headExtra}
 </head>
-<body>
+<body class="homepage">
     ${headerComponent.replace(/\{\{BASE_URL\}\}/g, '.').replace(/\{\{SITE_NAME\}\}/g, 'ToolVerse')}
     
-    <section class="clean-hero" id="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">70 TOOLS.<br>ONE TOOLKIT.</h1>
-            <p class="hero-subtitle">Fast. Private. Browser-powered.</p>
-            <div class="hero-ctas">
-                <a href="#search-section" class="btn btn-primary">Explore Tools</a>
-                <a href="#search-section" class="btn btn-secondary">Find a Tool</a>
+    <section class="clean-hero" id="hero-section" aria-labelledby="hero-title">
+        <div class="hero-stage">
+            <div class="hero-content">
+                <h1 class="hero-title" id="hero-title">70 TOOLS.<br>ONE TOOLKIT.</h1>
+                <p class="hero-subtitle">Fast. Private. Browser-powered.</p>
+                <div class="hero-ctas">
+                    <a href="#search-section" class="btn btn-primary">Explore Tools</a>
+                    <a href="#search-section" class="btn btn-secondary">Find a Tool</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="hero-wrench-container" id="hero-wrench-container">
-            <svg viewBox="0 0 100 400" class="premium-wrench-svg" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <!-- Main forged steel gradient -->
-                    <linearGradient id="metalBase" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#404040" />
-                        <stop offset="15%" stop-color="#e5e5e5" />
-                        <stop offset="40%" stop-color="#8a8a8a" />
-                        <stop offset="75%" stop-color="#262626" />
-                        <stop offset="90%" stop-color="#a3a3a3" />
-                        <stop offset="100%" stop-color="#525252" />
-                    </linearGradient>
 
-                    <!-- Subtle edge highlight for 3D bevel -->
-                    <linearGradient id="metalHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-                        <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1" />
-                        <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
-                    </linearGradient>
+            <div class="hero-wrench-container" id="hero-wrench-container">
+                <svg viewBox="0 0 960 340" class="premium-wrench-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="wrench-title wrench-description">
+                    <title id="wrench-title">Forged steel combination wrench</title>
+                    <desc id="wrench-description">A broad combination wrench with an open jaw and a twelve-point box end.</desc>
+                    <defs>
+                        <linearGradient id="forged-steel" x1="0" y1="0" x2="0.92" y2="1">
+                            <stop offset="0" stop-color="#c9ced3" />
+                            <stop offset="0.16" stop-color="#858b94" />
+                            <stop offset="0.38" stop-color="#b5bac0" />
+                            <stop offset="0.61" stop-color="#666d76" />
+                            <stop offset="0.82" stop-color="#989ea6" />
+                            <stop offset="1" stop-color="#454b54" />
+                        </linearGradient>
+                        <linearGradient id="forged-edge" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#e1e4e7" stop-opacity="0.52" />
+                            <stop offset="0.44" stop-color="#aeb4ba" stop-opacity="0.16" />
+                            <stop offset="1" stop-color="#252a32" stop-opacity="0.72" />
+                        </linearGradient>
+                        <linearGradient id="handle-bevel" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#c7ccd1" stop-opacity="0.34" />
+                            <stop offset="0.34" stop-color="#7d848d" stop-opacity="0.18" />
+                            <stop offset="0.72" stop-color="#363b43" stop-opacity="0.46" />
+                            <stop offset="1" stop-color="#aeb4ba" stop-opacity="0.2" />
+                        </linearGradient>
+                        <filter id="wrench-shadow" x="-14%" y="-35%" width="132%" height="185%">
+                            <feDropShadow dx="15" dy="18" stdDeviation="15" flood-color="#000000" flood-opacity="0.48" />
+                            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.58" />
+                        </filter>
+                    </defs>
 
-                    <!-- Recessed panel gradient (darker, inverted lighting) -->
-                    <linearGradient id="panelBase" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#1a1a1a" />
-                        <stop offset="30%" stop-color="#404040" />
-                        <stop offset="80%" stop-color="#262626" />
-                        <stop offset="100%" stop-color="#111111" />
-                    </linearGradient>
+                    <g filter="url(#wrench-shadow)">
+                        <path fill-rule="evenodd" d="M20 45C79 13 151 30 193 87C208 108 222 126 248 136L696 136C713 84 762 48 820 48C888 48 943 103 943 170C943 237 888 292 820 292C762 292 713 256 696 204L248 204C222 214 208 232 193 253C151 310 79 327 20 295L83 219C106 236 136 226 148 199C156 181 156 159 148 141C136 114 106 104 83 121L20 45ZM820 94L850 102L876 120L894 145L901 170L894 195L876 220L850 238L820 246L790 238L764 220L746 195L739 170L746 145L764 120L790 102L820 94Z" fill="url(#forged-steel)" stroke="url(#forged-edge)" stroke-width="4" stroke-linejoin="round" />
 
-                    <!-- Drop shadow for realism against dark background -->
-                    <filter id="wrenchShadow" x="-50%" y="-20%" width="200%" height="150%">
-                        <feDropShadow dx="15" dy="25" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
-                        <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.6" />
-                    </filter>
-                </defs>
+                        <path d="M244 153C272 160 309 161 349 161H681C677 167 677 173 681 179H349C309 179 272 180 244 187C253 175 253 165 244 153Z" fill="url(#handle-bevel)" opacity="0.82" />
+                        <path d="M265 151H687" fill="none" stroke="#d8dce0" stroke-opacity="0.24" stroke-width="3" stroke-linecap="round" />
+                        <path d="M266 190H687" fill="none" stroke="#1f232b" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round" />
 
-                <g filter="url(#wrenchShadow)">
-                    <!-- Outer Wrench Silhouette with Open Jaw and Box End (EvenOdd for hole) -->
-                    <path fill-rule="evenodd" d="
-                        M 25,15 
-                        C 10,25 10,60 25,75 
-                        C 35,85 35,95 35,105 
-                        L 35,310 
-                        C 35,320 20,330 20,355 
-                        C 20,390 80,390 80,355 
-                        C 80,330 65,320 65,310 
-                        L 65,105 
-                        C 65,95 65,85 75,75 
-                        C 90,60 90,25 75,15 
-                        C 70,10 65,10 60,15 
-                        L 60,45 
-                        C 60,55 40,55 40,45 
-                        L 40,15 
-                        C 35,10 30,10 25,15 Z 
-                        M 50,340 
-                        A 15,15 0 1,0 50,370 
-                        A 15,15 0 1,0 50,340 Z" 
-                        fill="url(#metalBase)" 
-                        stroke="url(#metalHighlight)" 
-                        stroke-width="1.5" />
-                    
-                    <!-- Recessed Handle Panel -->
-                    <path d="
-                        M 42,110 
-                        L 58,110 
-                        C 60,110 60,112 60,115 
-                        L 60,295 
-                        C 60,298 60,300 58,300 
-                        L 42,300 
-                        C 40,300 40,298 40,295 
-                        L 40,115 
-                        C 40,112 40,110 42,110 Z" 
-                        fill="url(#panelBase)" 
-                        stroke="#000000" 
-                        stroke-width="0.5" 
-                        stroke-opacity="0.5" />
-                </g>
-            </svg>
+                        <path d="M29 48C84 24 145 42 181 93M29 292C84 316 145 298 181 247" fill="none" stroke="#dce0e3" stroke-opacity="0.22" stroke-width="4" stroke-linecap="round" />
+                        <path d="M86 121C107 107 135 116 148 141M86 219C107 233 135 224 148 199" fill="none" stroke="#343943" stroke-opacity="0.9" stroke-width="6" stroke-linecap="round" />
+
+                        <path d="M820 81C870 81 910 121 910 170C910 219 870 259 820 259C770 259 730 219 730 170C730 121 770 81 820 81Z" fill="none" stroke="#d9dde1" stroke-opacity="0.22" stroke-width="4" />
+                        <path d="M820 94L850 102L876 120L894 145L901 170L894 195L876 220L850 238L820 246L790 238L764 220L746 195L739 170L746 145L764 120L790 102Z" fill="none" stroke="#20252e" stroke-width="7" stroke-linejoin="bevel" />
+                        <path d="M790 103L820 95L850 103M894 145L901 170L894 195M850 237L820 245L790 237" fill="none" stroke="#d5d9dd" stroke-opacity="0.16" stroke-width="3" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </div>
         </div>
     </section>
     
-    <section class="section" id="search-section" style="padding-top: 4rem; background: var(--bg-secondary);">
+    <section class="section search-intro-section" id="search-section" aria-labelledby="search-section-title">
         <div class="container">
-            <div class="search-container animate-on-scroll" style="margin-bottom: 2rem;">
-                <input type="text" id="hero-search" placeholder="Search for tools... (e.g. Word Counter)" autocomplete="off" aria-label="Search tools">
-                <div id="hero-search-results" class="search-results" role="listbox"></div>
+            <div class="search-entry animate-on-scroll">
+                <div class="search-intro">
+                    <h2 id="search-section-title">Find the right tool instantly</h2>
+                    <p>Search across all 70 browser-powered tools.</p>
+                </div>
+                <div class="search-panel">
+                    <div class="search-container">
+                        <label for="hero-search" class="visually-hidden">Search all ToolVerse tools</label>
+                        <input type="text" id="hero-search" placeholder="Search tools, categories, or tasks..." autocomplete="off" role="combobox" aria-label="Search all ToolVerse tools" aria-autocomplete="list" aria-controls="hero-search-results" aria-expanded="false" aria-haspopup="listbox">
+                        <div id="hero-search-results" class="search-results" role="listbox" aria-label="Tool search results"></div>
+                    </div>
+                </div>
             </div>
             <div class="stats-row animate-on-scroll">
                 ${homepageData.hero.stats.map(s => `
@@ -528,29 +531,24 @@ const buildApp = async () => {
         </div>
     </section>
     
-    <section class="section bg-light">
+    <section class="section tools-arcade" id="tools-arcade" aria-labelledby="tools-arcade-title">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Featured Tools</h2>
-            <div class="grid-3">
-                ${featuredTools.map(toolCardHTML).join('')}
+            <div class="arcade-heading animate-on-scroll">
+                <p class="arcade-eyebrow">ToolVerse catalog</p>
+                <h2 id="tools-arcade-title">Tools Arcade</h2>
+                <p>Browse by category or open any tool instantly.</p>
             </div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Trending Now</h2>
-            <div class="grid-3">
-                ${trendingTools.map(toolCardHTML).join('')}
+            <div class="arcade-filter-shell animate-on-scroll">
+                <div class="arcade-filters" role="group" aria-label="Filter tools by category">
+                    <button type="button" class="arcade-filter active" id="all" data-filter="all" aria-pressed="true" aria-controls="tools-arcade-grid">
+                        <span>All tools</span><span class="arcade-filter-count" aria-hidden="true">${tools.length}</span>
+                    </button>
+                    ${arcadeFiltersHTML}
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Browse by Category</h2>
-            <div class="grid-3">
-                ${categoriesHTML}
+            <p class="arcade-result-count" id="arcade-filter-status" aria-live="polite">Showing all ${tools.length} tools</p>
+            <div class="tools-arcade-grid" id="tools-arcade-grid">
+                ${arcadeCardsHTML}
             </div>
         </div>
     </section>
@@ -568,7 +566,9 @@ const buildApp = async () => {
         </div>
     </section>
     
-    ${footerComponent.replace(/\{\{BASE_URL\}\}/g, '.')}
+    ${homepageFooterComponent
+        .replace(/\{\{BASE_URL\}\}/g, '.')
+        .replace(/\{\{CURRENT_YEAR\}\}/g, String(new Date().getFullYear()))}
     
     <script>
         window.TOOLVERSE_TOOLS = ${JSON.stringify(tools.map(t => ({ name: t.name, slug: t.slug, category: t.categoryName, icon: t.icon, desc: t.shortDesc })))};
