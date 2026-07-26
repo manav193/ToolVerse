@@ -421,11 +421,99 @@ const buildApp = async () => {
 <body>
     ${headerComponent.replace(/\{\{BASE_URL\}\}/g, '.').replace(/\{\{SITE_NAME\}\}/g, 'ToolVerse')}
     
-    <section class="home-hero">
+    <section class="clean-hero" id="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">70 TOOLS.<br>ONE TOOLKIT.</h1>
+            <p class="hero-subtitle">Fast. Private. Browser-powered.</p>
+            <div class="hero-ctas">
+                <a href="#search-section" class="btn btn-primary">Explore Tools</a>
+                <a href="#search-section" class="btn btn-secondary">Find a Tool</a>
+            </div>
+        </div>
+        
+        <div class="hero-wrench-container" id="hero-wrench-container">
+            <svg viewBox="0 0 100 400" class="premium-wrench-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Main forged steel gradient -->
+                    <linearGradient id="metalBase" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#404040" />
+                        <stop offset="15%" stop-color="#e5e5e5" />
+                        <stop offset="40%" stop-color="#8a8a8a" />
+                        <stop offset="75%" stop-color="#262626" />
+                        <stop offset="90%" stop-color="#a3a3a3" />
+                        <stop offset="100%" stop-color="#525252" />
+                    </linearGradient>
+
+                    <!-- Subtle edge highlight for 3D bevel -->
+                    <linearGradient id="metalHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                        <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1" />
+                        <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+                    </linearGradient>
+
+                    <!-- Recessed panel gradient (darker, inverted lighting) -->
+                    <linearGradient id="panelBase" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#1a1a1a" />
+                        <stop offset="30%" stop-color="#404040" />
+                        <stop offset="80%" stop-color="#262626" />
+                        <stop offset="100%" stop-color="#111111" />
+                    </linearGradient>
+
+                    <!-- Drop shadow for realism against dark background -->
+                    <filter id="wrenchShadow" x="-50%" y="-20%" width="200%" height="150%">
+                        <feDropShadow dx="15" dy="25" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
+                        <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.6" />
+                    </filter>
+                </defs>
+
+                <g filter="url(#wrenchShadow)">
+                    <!-- Outer Wrench Silhouette with Open Jaw and Box End (EvenOdd for hole) -->
+                    <path fill-rule="evenodd" d="
+                        M 25,15 
+                        C 10,25 10,60 25,75 
+                        C 35,85 35,95 35,105 
+                        L 35,310 
+                        C 35,320 20,330 20,355 
+                        C 20,390 80,390 80,355 
+                        C 80,330 65,320 65,310 
+                        L 65,105 
+                        C 65,95 65,85 75,75 
+                        C 90,60 90,25 75,15 
+                        C 70,10 65,10 60,15 
+                        L 60,45 
+                        C 60,55 40,55 40,45 
+                        L 40,15 
+                        C 35,10 30,10 25,15 Z 
+                        M 50,340 
+                        A 15,15 0 1,0 50,370 
+                        A 15,15 0 1,0 50,340 Z" 
+                        fill="url(#metalBase)" 
+                        stroke="url(#metalHighlight)" 
+                        stroke-width="1.5" />
+                    
+                    <!-- Recessed Handle Panel -->
+                    <path d="
+                        M 42,110 
+                        L 58,110 
+                        C 60,110 60,112 60,115 
+                        L 60,295 
+                        C 60,298 60,300 58,300 
+                        L 42,300 
+                        C 40,300 40,298 40,295 
+                        L 40,115 
+                        C 40,112 40,110 42,110 Z" 
+                        fill="url(#panelBase)" 
+                        stroke="#000000" 
+                        stroke-width="0.5" 
+                        stroke-opacity="0.5" />
+                </g>
+            </svg>
+        </div>
+    </section>
+    
+    <section class="section" id="search-section" style="padding-top: 4rem; background: var(--bg-secondary);">
         <div class="container">
-            <h1 class="animate-on-scroll">${homepageData.hero.title}</h1>
-            <p class="animate-on-scroll">${homepageData.hero.subtitle}</p>
-            <div class="search-container animate-on-scroll">
+            <div class="search-container animate-on-scroll" style="margin-bottom: 2rem;">
                 <input type="text" id="hero-search" placeholder="Search for tools... (e.g. Word Counter)" autocomplete="off" aria-label="Search tools">
                 <div id="hero-search-results" class="search-results" role="listbox"></div>
             </div>

@@ -346,6 +346,57 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(btnInstallHeader) btnInstallHeader.addEventListener('click', handleInstall);
     if(btnInstallFooter) btnInstallFooter.addEventListener('click', handleInstall);
+
+    // 12. Clean Hero Wrench Scroll
+    const heroSection = document.getElementById('hero-section');
+    const heroWrench = document.getElementById('hero-wrench-container');
+    const heroContent = document.querySelector('.hero-content');
+
+    if (heroSection && heroWrench && heroContent) {
+        let currentScale = 1;
+        let currentRot = 45;
+        let targetScale = 1;
+        let targetRot = 45;
+        let currentOpacity = 1;
+        let targetOpacity = 1;
+
+        const lerp = (start, end, factor) => start + (end - start) * factor;
+
+        // Init immediately
+        heroWrench.style.transform = `scale(${currentScale}) rotate(${currentRot}deg)`;
+
+        const renderHero = () => {
+            const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!isReducedMotion) {
+                const scrollY = window.scrollY;
+                const heroHeight = heroSection.offsetHeight - window.innerHeight;
+                
+                let progress = 0;
+                if (heroHeight > 0) {
+                    progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
+                }
+
+                const maxScale = window.innerWidth < 768 ? 1.5 : 2.5;
+                const maxRot = 4;
+                
+                targetScale = 1 + (progress * (maxScale - 1));
+                targetRot = 45 + (progress * maxRot);
+                targetOpacity = Math.max(1 - (progress * 1.5), 0);
+                
+                currentScale = lerp(currentScale, targetScale, 0.1);
+                currentRot = lerp(currentRot, targetRot, 0.1);
+                currentOpacity = lerp(currentOpacity, targetOpacity, 0.1);
+                
+                heroWrench.style.transform = `scale(${currentScale}) rotate(${currentRot}deg)`;
+                heroContent.style.opacity = currentOpacity;
+            } else {
+                heroWrench.style.transform = `scale(1) rotate(45deg)`;
+                heroContent.style.opacity = 1;
+            }
+            requestAnimationFrame(renderHero);
+        };
+        requestAnimationFrame(renderHero);
+    }
 });
 
 // PWA Service Worker Registration
