@@ -1,9 +1,9 @@
 {
   "name": "toolverse",
   "version": "1.0.0",
-  "description": "ToolVerse - 100% Free Online Tools for Everyone",
+  "description": "ToolVerse - 70+ browser-powered tools",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.js && node qa-postbuild.js",
     "serve": "npx -y serve@latest . -l 3000"
   },
   "author": "ToolVerse",
