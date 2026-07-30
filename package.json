@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "ToolVerse - 70+ browser-powered tools",
   "scripts": {
-    "build": "node build.js && (node qa-postbuild.js || node qa-recovery.js)",
+    "build": "node qa-toolverse-experience.js && node build.js && (node qa-postbuild.js || node qa-recovery.js)",
+    "qa:experience": "node qa-toolverse-experience.js",
     "serve": "npx -y serve@latest . -l 3000"
   },
   "author": "ToolVerse",
