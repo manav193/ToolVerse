@@ -4,15 +4,18 @@ const path = require('path');
 const ROOT = __dirname;
 const LIVE_URL = 'https://tool-verse-theta.vercel.app';
 const LEGACY_URL = 'https://manav193.github.io/ToolVerse';
-const IMAGE_SLUGS = new Set([
-  'compress-image', 'crop-image', 'png-to-jpg', 'webp-converter',
-  'rotate-image', 'flip-image', 'blur-image', 'bg-color-changer',
-  'image-watermark', 'ico-generator', 'resize-image', 'jpg-to-png'
-]);
-
-function titleFromSlug(slug = '') {
-  return slug.split('-').filter(Boolean).map(word => word[0]?.toUpperCase() + word.slice(1)).join(' ');
-}
+const IMAGE_CATALOG = {
+  'compress-image': ['Compress Image', 'Reduce image file size with adjustable quality.'],
+  'crop-image': ['Crop Image', 'Crop images freely or to common aspect ratios.'],
+  'png-to-jpg': ['PNG to JPG Converter', 'Convert PNG images to JPG format.'],
+  'webp-converter': ['WebP Converter', 'Convert images to the modern WebP format.'],
+  'rotate-image': ['Rotate Image', 'Rotate images left or right by 90 degrees.'],
+  'flip-image': ['Flip Image', 'Flip images horizontally or vertically.'],
+  'blur-image': ['Blur Image', 'Apply an adjustable blur effect to images.'],
+  'bg-color-changer': ['Background Color Changer', 'Replace transparent backgrounds with colors or gradients.'],
+  'image-watermark': ['Image Watermark', 'Add a custom text watermark to images.'],
+  'ico-generator': ['ICO Generator', 'Create favicon ICO files and standard PNG sizes.']
+};
 
 function walk(directory, visitor) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -21,6 +24,10 @@ function walk(directory, visitor) {
     if (entry.isDirectory()) walk(fullPath, visitor);
     else visitor(fullPath);
   }
+}
+
+function escapeJs(value) {
+  return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
 function patchGeneratedHtml(filePath) {
@@ -33,25 +40,18 @@ function patchGeneratedHtml(filePath) {
   }
 
   if (path.basename(filePath) === 'index.html') {
-    const catalogPattern = /window\.TOOLVERSE_TOOLS\s*=\s*(\[[\s\S]*?\]);<\/script>/;
-    const match = html.match(catalogPattern);
-    if (match) {
-      try {
-        const catalog = JSON.parse(match[1]).map(tool => {
-          const slug = String(tool.slug || '');
-          const imageTool = IMAGE_SLUGS.has(slug);
-          return {
-            ...tool,
-            name: tool.name || titleFromSlug(slug),
-            category: tool.category || (imageTool ? 'Image Tools' : 'Utility Tools'),
-            icon: tool.icon || (imageTool ? '🖼️' : '🔧'),
-            desc: tool.desc || 'Open this browser-powered tool.'
-          };
-        });
-        html = html.replace(catalogPattern, `window.TOOLVERSE_TOOLS=${JSON.stringify(catalog)};</script>`);
+    for (const [slug, [name, desc]] of Object.entries(IMAGE_CATALOG)) {
+      const malformed = `{slug:"${slug}"}`;
+      const repaired = `{name:"${escapeJs(name)}",slug:"${slug}",category:"Image Tools",icon:"🖼️",desc:"${escapeJs(desc)}"}`;
+      if (html.includes(malformed)) {
+        html = html.split(malformed).join(repaired);
         changed = true;
-      } catch (error) {
-        console.warn('QA post-build: search catalog could not be normalized.', error.message);
+      }
+    }
+
+    for (const slug of Object.keys(IMAGE_CATALOG)) {
+      if (html.includes(`{slug:"${slug}"}`)) {
+        throw new Error(`QA post-build: incomplete search entry remains for ${slug}.`);
       }
     }
   }
@@ -85,7 +85,7 @@ const manifest = {
 };
 fs.writeFileSync(path.join(ROOT, 'manifest.json'), JSON.stringify(manifest, null, 2));
 
-const serviceWorker = `const CACHE_NAME='toolverse-cache-v3';
+const serviceWorker = `const CACHE_NAME='toolverse-cache-v4';
 const CORE_ASSETS=['./','./index.html','./css/style.css','./js/main.js','./offline.html'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('toolverse-cache-')&&key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim();});
