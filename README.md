@@ -4,7 +4,7 @@ A privacy-first progressive web application containing 70+ browser-based tools f
 
 ![ToolVerse dashboard](https://raw.githubusercontent.com/manav193/MY-PORTFOLIO/main/frontend/images/toolverse_4.png)
 
-[Open ToolVerse](https://tool-verse-theta.vercel.app/) · [View the engineering case study](https://my-portfolio-mu-jade-52.vercel.app/project-toolverse.html)
+[Open ToolVerse](https://tool-verse-theta.vercel.app/) · [View the engineering case study](https://manavagarwal.me/project-toolverse.html)
 
 ## Why ToolVerse
 
