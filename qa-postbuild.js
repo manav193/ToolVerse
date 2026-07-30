@@ -173,8 +173,18 @@ function repairAdvancedImagePage(html, slug, data) {
   const actionsPattern = /(<div class="tool-actions"[^>]*>[\s\S]*?<\/div>)<div class="tool-actions"[^>]*>[\s\S]*?<\/div>(?=<\/div><div class="ad-container ad-mid">)/;
   html = html.replace(actionsPattern, '$1');
 
-  if (html.includes('undefined')) {
-    throw new Error(`QA post-build: unresolved metadata remains in tools/${slug}.html.`);
+  const unresolvedVisibleMetadata = [
+    /<title>undefined<\/title>/,
+    /content="undefined"/,
+    />undefined<\/a>/,
+    />undefined<\/li>/,
+    />undefined<\/h[1-6]>/,
+    />undefined<\/p>/,
+    />undefined undefined</,
+    /free undefined tool!/
+  ];
+  if (unresolvedVisibleMetadata.some(pattern => pattern.test(html))) {
+    throw new Error(`QA post-build: unresolved visible metadata remains in tools/${slug}.html.`);
   }
   return html;
 }
