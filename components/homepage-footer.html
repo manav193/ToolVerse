@@ -41,5 +41,15 @@
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!Array.isArray(window.TOOLVERSE_TOOLS)) return;
+    var unique = new Map();
+    window.TOOLVERSE_TOOLS.forEach(function (tool) {
+      if (tool && tool.slug && !unique.has(tool.slug)) unique.set(tool.slug, tool);
+    });
+    window.TOOLVERSE_TOOLS = Array.from(unique.values());
+  }, { once: true });
+</script>
 <link rel="stylesheet" href="{{BASE_URL}}/css/tool-experience.css">
 <script src="{{BASE_URL}}/js/tool-experience.js" defer></script>
