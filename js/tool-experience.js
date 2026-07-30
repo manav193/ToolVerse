@@ -62,10 +62,12 @@
   }
 
   function decorateCards() {
+    let decorated = false;
     document.querySelectorAll('a.arcade-tool-card, a.tool-card').forEach(card => {
       const slug = slugFromHref(card.href);
       if (!slug || card.dataset.experienceReady) return;
       card.dataset.experienceReady = 'true';
+      decorated = true;
       const tier = tierFor(slug);
       card.dataset.qualityTier = tier.toLowerCase();
       const badge = document.createElement('span');
@@ -91,7 +93,7 @@
       card.appendChild(favorite);
       card.addEventListener('click', () => recordRecent(slug, titleFromCard(card), card.href));
     });
-    refreshFavoriteButtons();
+    if (decorated) refreshFavoriteButtons();
   }
 
   function refreshFavoriteButtons() {
@@ -157,8 +159,7 @@
     const oldInput = document.getElementById('hero-search');
     const results = document.getElementById('hero-search-results');
     if (!oldInput || !results || !window.TOOLVERSE_TOOLS) return;
-    const input = oldInput.cloneNode(true);
-    oldInput.replaceWith(input);
+    const input = oldInput;
     const tools = window.TOOLVERSE_TOOLS;
     const score = (tool, raw) => {
       const q = normalize(raw); const name = normalize(tool.name); const category = normalize(tool.category); const slug = normalize(tool.slug);
@@ -190,6 +191,9 @@
     document.addEventListener('change', event => {
       const input = event.target.closest('input[type="file"]');
       if (!input || !input.files?.length) return;
+      // Purpose-built image and PDF workspaces provide more precise inline
+      // validation and must receive the original FileList unchanged.
+      if (input.closest('.image-tool, .pdf-tool')) return;
       const file = input.files[0];
       const accept = (input.accept || '').split(',').map(x => x.trim()).filter(Boolean);
       const extension = `.${file.name.split('.').pop().toLowerCase()}`;

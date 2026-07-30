@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://manav193.github.io/ToolVerse/sitemap.xml
+Sitemap: https://tool-verse-theta.vercel.app/sitemap.xml

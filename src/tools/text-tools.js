@@ -1,4 +1,4 @@
-module.exports = [
+const textTools = [
 {
   "slug": "word-counter",
   "name": "Word Counter",
@@ -189,3 +189,368 @@ module.exports = [
   ]
 },
 ];
+
+const textWorkspaceMarkup = {
+  'word-counter': `
+    <div class="text-tool text-tool--analysis">
+      <div class="text-analysis-layout">
+        <section class="text-editor-panel" aria-labelledby="wc-input-heading">
+          <div class="text-panel-heading">
+            <div><p class="text-panel-kicker">Input</p><h3 id="wc-input-heading">Text to analyze</h3></div>
+            <span class="text-panel-hint">Updates as you type</span>
+          </div>
+          <label class="form-label" for="wc-input">Type or paste your text</label>
+          <textarea id="wc-input" class="form-input text-workspace-textarea" rows="12" placeholder="Start writing or paste text here..."></textarea>
+          <div class="text-action-row">
+            <button type="button" id="wc-clear" class="btn btn-ghost">Clear text</button>
+            <button type="button" id="wc-copy" class="btn btn-secondary" disabled>Copy statistics</button>
+          </div>
+          <p class="text-tool-status" id="wc-status" role="status" aria-live="polite"></p>
+        </section>
+        <section class="text-results-panel" aria-labelledby="wc-results-heading">
+          <div class="text-panel-heading">
+            <div><p class="text-panel-kicker">Live results</p><h3 id="wc-results-heading">Text statistics</h3></div>
+          </div>
+          <dl class="text-metrics-grid" aria-label="Live text statistics">
+            <div class="text-metric text-metric--primary"><dt>Words</dt><dd id="wc-words">0</dd></div>
+            <div class="text-metric text-metric--primary"><dt>Characters</dt><dd id="wc-chars">0</dd></div>
+            <div class="text-metric"><dt>Sentences</dt><dd id="wc-sentences">0</dd></div>
+            <div class="text-metric"><dt>Paragraphs</dt><dd id="wc-paragraphs">0</dd></div>
+            <div class="text-metric"><dt>Reading time</dt><dd id="wc-read-time">0m</dd></div>
+            <div class="text-metric"><dt>Speaking time</dt><dd id="wc-speak-time">0m</dd></div>
+          </dl>
+        </section>
+      </div>
+    </div>`,
+  'character-counter': `
+    <div class="text-tool text-tool--analysis">
+      <div class="text-analysis-layout">
+        <section class="text-editor-panel" aria-labelledby="cc-input-heading">
+          <div class="text-panel-heading">
+            <div><p class="text-panel-kicker">Input</p><h3 id="cc-input-heading">Text to measure</h3></div>
+            <span class="text-panel-hint">Updates as you type</span>
+          </div>
+          <label class="form-label" for="cc-input">Type or paste your text</label>
+          <textarea id="cc-input" class="form-input text-workspace-textarea" rows="12" placeholder="Start writing or paste text here..."></textarea>
+          <div class="text-action-row">
+            <button type="button" id="cc-clear" class="btn btn-ghost">Clear text</button>
+            <button type="button" id="cc-copy" class="btn btn-secondary" disabled>Copy statistics</button>
+          </div>
+          <p class="text-tool-status" id="cc-status" role="status" aria-live="polite"></p>
+        </section>
+        <section class="text-results-panel" aria-labelledby="cc-results-heading">
+          <div class="text-panel-heading">
+            <div><p class="text-panel-kicker">Live results</p><h3 id="cc-results-heading">Character statistics</h3></div>
+          </div>
+          <dl class="text-metrics-grid" aria-label="Live character statistics">
+            <div class="text-metric text-metric--primary"><dt>With spaces</dt><dd id="cc-with-spaces">0</dd></div>
+            <div class="text-metric text-metric--primary"><dt>Without spaces</dt><dd id="cc-no-spaces">0</dd></div>
+            <div class="text-metric"><dt>Words</dt><dd id="cc-words">0</dd></div>
+            <div class="text-metric"><dt>UTF-8 bytes</dt><dd id="cc-bytes">0</dd></div>
+          </dl>
+        </section>
+      </div>
+    </div>`,
+  'case-converter': `
+    <div class="text-tool text-tool--transform">
+      <section class="text-mode-section" aria-labelledby="case-mode-heading">
+        <div class="text-panel-heading">
+          <div><p class="text-panel-kicker">Conversion style</p><h3 id="case-mode-heading">Choose a text case</h3></div>
+        </div>
+        <div class="text-mode-controls" role="group" aria-label="Text case options">
+          <button type="button" class="text-mode-control" data-action="upper" aria-pressed="false">UPPERCASE</button>
+          <button type="button" class="text-mode-control" data-action="lower" aria-pressed="false">lowercase</button>
+          <button type="button" class="text-mode-control" data-action="title" aria-pressed="false">Title Case</button>
+          <button type="button" class="text-mode-control" data-action="sentence" aria-pressed="false">Sentence case</button>
+          <button type="button" class="text-mode-control" data-action="camel" aria-pressed="false">camelCase</button>
+          <button type="button" class="text-mode-control" data-action="snake" aria-pressed="false">snake_case</button>
+          <button type="button" class="text-mode-control" data-action="kebab" aria-pressed="false">kebab-case</button>
+          <button type="button" class="text-mode-control" data-action="pascal" aria-pressed="false">PascalCase</button>
+        </div>
+      </section>
+      <div class="text-transform-layout">
+        <section class="text-editor-panel" aria-labelledby="case-input-heading">
+          <div class="text-panel-heading"><div><p class="text-panel-kicker">Input</p><h3 id="case-input-heading">Original text</h3></div></div>
+          <label class="form-label" for="case-input">Text to convert</label>
+          <textarea id="case-input" class="form-input text-workspace-textarea" rows="10" placeholder="Enter text to convert..."></textarea>
+        </section>
+        <section class="text-editor-panel text-editor-panel--output" aria-labelledby="case-output-heading">
+          <div class="text-panel-heading"><div><p class="text-panel-kicker">Result</p><h3 id="case-output-heading">Converted text</h3></div></div>
+          <label class="form-label" for="case-output">Conversion result</label>
+          <textarea id="case-output" class="form-input text-workspace-textarea" rows="10" readonly placeholder="Choose a conversion style to see the result"></textarea>
+        </section>
+      </div>
+      <div class="text-action-row text-action-row--end">
+        <button type="button" id="case-clear" class="btn btn-ghost">Clear all</button>
+        <button type="button" id="case-copy" class="btn btn-secondary" disabled>Copy result</button>
+      </div>
+      <p class="text-tool-status" id="case-status" role="status" aria-live="polite"></p>
+    </div>`,
+  'remove-duplicate-lines': `
+    <div class="text-tool text-tool--transform">
+      <fieldset class="text-options-group">
+        <legend>Processing options</legend>
+        <div class="text-option-list">
+          <label class="text-option" for="rd-case"><input type="checkbox" id="rd-case" checked><span>Case-sensitive</span></label>
+          <label class="text-option" for="rd-trim"><input type="checkbox" id="rd-trim" checked><span>Trim whitespace</span></label>
+          <label class="text-option" for="rd-sort"><input type="checkbox" id="rd-sort"><span>Sort alphabetically</span></label>
+        </div>
+      </fieldset>
+      <div class="text-transform-layout">
+        <section class="text-editor-panel" aria-labelledby="rd-input-heading">
+          <div class="text-panel-heading"><div><p class="text-panel-kicker">Input</p><h3 id="rd-input-heading">Original list</h3></div></div>
+          <label class="form-label" for="rd-input">One item per line</label>
+          <textarea id="rd-input" class="form-input text-workspace-textarea text-workspace-textarea--lines" rows="11" placeholder="Item 1&#10;Item 2&#10;Item 1"></textarea>
+        </section>
+        <section class="text-editor-panel text-editor-panel--output" aria-labelledby="rd-output-heading">
+          <div class="text-panel-heading"><div><p class="text-panel-kicker">Result</p><h3 id="rd-output-heading">Unique lines</h3></div></div>
+          <label class="form-label" for="rd-output">Cleaned list</label>
+          <textarea id="rd-output" class="form-input text-workspace-textarea text-workspace-textarea--lines" rows="11" readonly placeholder="Your cleaned list will appear here"></textarea>
+        </section>
+      </div>
+      <div class="text-action-row text-action-row--end">
+        <button type="button" id="rd-clear" class="btn btn-ghost">Clear all</button>
+        <button type="button" id="rd-copy" class="btn btn-secondary" disabled>Copy result</button>
+        <button type="button" id="rd-process" class="btn btn-primary">Remove duplicates</button>
+      </div>
+      <p class="text-tool-status" id="rd-status" role="status" aria-live="polite"></p>
+      <dl class="text-metrics-grid text-metrics-grid--compact" aria-label="Line processing statistics">
+        <div class="text-metric"><dt>Total lines</dt><dd id="rd-total">0</dd></div>
+        <div class="text-metric"><dt>Unique lines</dt><dd id="rd-unique">0</dd></div>
+        <div class="text-metric"><dt>Duplicates removed</dt><dd id="rd-removed">0</dd></div>
+      </dl>
+    </div>`
+};
+
+const textWorkspaceScripts = {
+  'word-counter': `(function() {
+    const input = document.getElementById('wc-input');
+    const clearButton = document.getElementById('wc-clear');
+    const copyButton = document.getElementById('wc-copy');
+    const status = document.getElementById('wc-status');
+    const wordsElement = document.getElementById('wc-words');
+    const charactersElement = document.getElementById('wc-chars');
+    const sentencesElement = document.getElementById('wc-sentences');
+    const paragraphsElement = document.getElementById('wc-paragraphs');
+    const readingElement = document.getElementById('wc-read-time');
+    const speakingElement = document.getElementById('wc-speak-time');
+    let updateFrame = 0;
+
+    function updateStatistics() {
+      updateFrame = 0;
+      const text = input.value;
+      const words = text.trim() ? text.trim().split(/\\s+/).length : 0;
+      const sentences = text.trim() ? (text.match(/[.!?]+(?=\\s|$)/g) || []).length : 0;
+      const paragraphs = text.trim() ? text.trim().split(/\\n\\s*\\n/).length : 0;
+      wordsElement.textContent = words;
+      charactersElement.textContent = text.length;
+      sentencesElement.textContent = sentences || (text.trim() ? 1 : 0);
+      paragraphsElement.textContent = paragraphs;
+      readingElement.textContent = Math.ceil(words / 200) + 'm';
+      speakingElement.textContent = Math.ceil(words / 130) + 'm';
+      copyButton.disabled = !text;
+    }
+
+    input.addEventListener('input', () => {
+      if (!updateFrame) updateFrame = requestAnimationFrame(updateStatistics);
+      status.textContent = '';
+    });
+    clearButton.addEventListener('click', () => {
+      input.value = '';
+      updateStatistics();
+      status.textContent = 'Text and statistics cleared.';
+      input.focus();
+    });
+    copyButton.addEventListener('click', async () => {
+      const summary = \`Words: \${wordsElement.textContent}\\nCharacters: \${charactersElement.textContent}\\nSentences: \${sentencesElement.textContent}\\nParagraphs: \${paragraphsElement.textContent}\\nReading Time: \${readingElement.textContent}\`;
+      try {
+        await navigator.clipboard.writeText(summary);
+        status.textContent = 'Statistics copied to clipboard.';
+        if (window.showToast) window.showToast('Statistics copied!', 'success');
+      } catch (error) {
+        status.textContent = 'Unable to copy statistics. Select and copy them manually.';
+        if (window.showToast) window.showToast('Copy failed', 'error');
+      }
+    });
+    updateStatistics();
+  })();`,
+  'character-counter': `(function() {
+    const input = document.getElementById('cc-input');
+    const clearButton = document.getElementById('cc-clear');
+    const copyButton = document.getElementById('cc-copy');
+    const status = document.getElementById('cc-status');
+    const withSpacesElement = document.getElementById('cc-with-spaces');
+    const withoutSpacesElement = document.getElementById('cc-no-spaces');
+    const wordsElement = document.getElementById('cc-words');
+    const bytesElement = document.getElementById('cc-bytes');
+    let updateFrame = 0;
+
+    function updateStatistics() {
+      updateFrame = 0;
+      const text = input.value;
+      withSpacesElement.textContent = text.length;
+      withoutSpacesElement.textContent = text.replace(/\\s/g, '').length;
+      wordsElement.textContent = text.trim() ? text.trim().split(/\\s+/).length : 0;
+      bytesElement.textContent = new Blob([text]).size;
+      copyButton.disabled = !text;
+    }
+
+    input.addEventListener('input', () => {
+      if (!updateFrame) updateFrame = requestAnimationFrame(updateStatistics);
+      status.textContent = '';
+    });
+    clearButton.addEventListener('click', () => {
+      input.value = '';
+      updateStatistics();
+      status.textContent = 'Text and statistics cleared.';
+      input.focus();
+    });
+    copyButton.addEventListener('click', async () => {
+      const summary = \`Characters (with spaces): \${withSpacesElement.textContent}\\nCharacters (without spaces): \${withoutSpacesElement.textContent}\\nWords: \${wordsElement.textContent}\\nUTF-8 bytes: \${bytesElement.textContent}\`;
+      try {
+        await navigator.clipboard.writeText(summary);
+        status.textContent = 'Statistics copied to clipboard.';
+        if (window.showToast) window.showToast('Statistics copied!', 'success');
+      } catch (error) {
+        status.textContent = 'Unable to copy statistics. Select and copy them manually.';
+        if (window.showToast) window.showToast('Copy failed', 'error');
+      }
+    });
+    updateStatistics();
+  })();`,
+  'case-converter': `(function() {
+    const input = document.getElementById('case-input');
+    const output = document.getElementById('case-output');
+    const modeButtons = Array.from(document.querySelectorAll('.text-mode-control[data-action]'));
+    const copyButton = document.getElementById('case-copy');
+    const clearButton = document.getElementById('case-clear');
+    const status = document.getElementById('case-status');
+    const converters = {
+      upper: text => text.toUpperCase(),
+      lower: text => text.toLowerCase(),
+      title: text => text.toLowerCase().replace(/(?:^|[^a-zA-Z0-9'])([a-z])/g, character => character.toUpperCase()),
+      sentence: text => text.toLowerCase().replace(/(^\\s*\\w|[.!?]\\s*\\w)/g, character => character.toUpperCase()),
+      camel: text => text.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, (word, index) => index === 0 ? word.toLowerCase() : word.toUpperCase()).replace(/\\s+/g, ''),
+      snake: text => text.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)?.map(value => value.toLowerCase()).join('_') || '',
+      kebab: text => text.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)?.map(value => value.toLowerCase()).join('-') || '',
+      pascal: text => text.match(/[a-z]+/gi)?.map(word => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('') || ''
+    };
+
+    modeButtons.forEach(button => button.addEventListener('click', () => {
+      modeButtons.forEach(candidate => candidate.setAttribute('aria-pressed', String(candidate === button)));
+      const action = button.dataset.action;
+      if (!input.value) {
+        output.value = '';
+        copyButton.disabled = true;
+        status.textContent = 'Enter text before choosing a conversion style.';
+        input.focus();
+        return;
+      }
+      output.value = converters[action](input.value);
+      copyButton.disabled = !output.value;
+      status.textContent = \`Converted using \${button.textContent.trim()}.\`;
+    }));
+    input.addEventListener('input', () => {
+      status.textContent = '';
+      if (!input.value) {
+        output.value = '';
+        copyButton.disabled = true;
+        modeButtons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+      }
+    });
+    clearButton.addEventListener('click', () => {
+      input.value = '';
+      output.value = '';
+      copyButton.disabled = true;
+      modeButtons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+      status.textContent = 'Input and result cleared.';
+      input.focus();
+    });
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(output.value);
+        status.textContent = 'Converted text copied to clipboard.';
+        if (window.showToast) window.showToast('Result copied!', 'success');
+      } catch (error) {
+        status.textContent = 'Unable to copy the result. Select and copy it manually.';
+        if (window.showToast) window.showToast('Copy failed', 'error');
+      }
+    });
+  })();`,
+  'remove-duplicate-lines': `(function() {
+    const input = document.getElementById('rd-input');
+    const output = document.getElementById('rd-output');
+    const processButton = document.getElementById('rd-process');
+    const copyButton = document.getElementById('rd-copy');
+    const clearButton = document.getElementById('rd-clear');
+    const caseSensitive = document.getElementById('rd-case');
+    const trimWhitespace = document.getElementById('rd-trim');
+    const sortAlphabetically = document.getElementById('rd-sort');
+    const totalElement = document.getElementById('rd-total');
+    const uniqueElement = document.getElementById('rd-unique');
+    const removedElement = document.getElementById('rd-removed');
+    const status = document.getElementById('rd-status');
+
+    function resetResults() {
+      output.value = '';
+      totalElement.textContent = '0';
+      uniqueElement.textContent = '0';
+      removedElement.textContent = '0';
+      copyButton.disabled = true;
+    }
+
+    processButton.addEventListener('click', () => {
+      const text = input.value;
+      if (!text) {
+        resetResults();
+        status.textContent = 'Enter at least one line to process.';
+        input.focus();
+        return;
+      }
+      let lines = text.split('\\n');
+      const total = lines.length;
+      if (trimWhitespace.checked) lines = lines.map(line => line.trim());
+      const seen = new Set();
+      const uniqueLines = [];
+      lines.forEach(line => {
+        const comparisonValue = caseSensitive.checked ? line : line.toLowerCase();
+        if (!seen.has(comparisonValue)) {
+          seen.add(comparisonValue);
+          uniqueLines.push(line);
+        }
+      });
+      if (sortAlphabetically.checked) uniqueLines.sort();
+      output.value = uniqueLines.join('\\n');
+      totalElement.textContent = total;
+      uniqueElement.textContent = uniqueLines.length;
+      removedElement.textContent = total - uniqueLines.length;
+      copyButton.disabled = !output.value;
+      status.textContent = \`Removed \${total - uniqueLines.length} duplicate \${total - uniqueLines.length === 1 ? 'line' : 'lines'}.\`;
+    });
+    input.addEventListener('input', () => { status.textContent = ''; });
+    clearButton.addEventListener('click', () => {
+      input.value = '';
+      resetResults();
+      status.textContent = 'Input, result, and statistics cleared.';
+      input.focus();
+    });
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(output.value);
+        status.textContent = 'Cleaned list copied to clipboard.';
+        if (window.showToast) window.showToast('Result copied!', 'success');
+      } catch (error) {
+        status.textContent = 'Unable to copy the result. Select and copy it manually.';
+        if (window.showToast) window.showToast('Copy failed', 'error');
+      }
+    });
+    resetResults();
+  })();`
+};
+
+textTools.forEach(tool => {
+  tool.toolHTML = textWorkspaceMarkup[tool.slug];
+  tool.toolScript = textWorkspaceScripts[tool.slug];
+});
+
+module.exports = textTools;

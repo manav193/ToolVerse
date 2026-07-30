@@ -1,0 +1,33 @@
+{
+  "id": "toolverse",
+  "name": "ToolVerse",
+  "version": "1.0.0",
+  "type": "utility-module",
+  "description": "70 private browser-powered utilities for everyday work.",
+  "icon": "icons/icon-192x192.png",
+  "entry": "index.html",
+  "knowledge": "toolverse-knowledge.json",
+  "status": "stable",
+  "capabilities": [
+    "image utilities",
+    "PDF utilities",
+    "text utilities",
+    "developer utilities",
+    "calculators"
+  ],
+  "keywords": [
+    "browser tools",
+    "compress image",
+    "merge PDF",
+    "calculators"
+  ],
+  "relatedModules": [
+    "arcade-os",
+    "nimo"
+  ],
+  "navigation": {
+    "backToArcade": "host:arcade-os",
+    "openModule": "index.html",
+    "askNimo": "host:nimo"
+  }
+}

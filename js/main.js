@@ -1,5 +1,107 @@
 // js/main.js
 document.addEventListener('DOMContentLoaded', () => {
+    // Shared premium interaction system. Pointer work is delegated and frame-throttled.
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const finePointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const motionEnabled = () => !reducedMotionQuery.matches;
+    const pointerMotionEnabled = () => motionEnabled() && finePointerQuery.matches;
+    const lightSurfaceSelector = '.btn, .arcade-tool-card, .tool-card, .related-tool-link, .sidebar-widget, .tool-workspace, .tool-support';
+    let activeSurface = null;
+    let activeMagnet = null;
+    let pendingPointer = null;
+    let pointerFrame = 0;
+
+    document.body.classList.add('motion-system', 'motion-boot');
+    if (motionEnabled()) {
+        requestAnimationFrame(() => document.body.classList.add('motion-entered'));
+    } else {
+        document.body.classList.add('motion-entered');
+    }
+
+    const resetPointerSurface = (surface) => {
+        if (!surface) return;
+        surface.style.removeProperty('--pointer-x');
+        surface.style.removeProperty('--pointer-y');
+        surface.style.removeProperty('--magnet-x');
+        surface.style.removeProperty('--magnet-y');
+        surface.classList.remove('is-pointer-active');
+    };
+
+    const renderPointerResponse = () => {
+        pointerFrame = 0;
+        if (!pendingPointer || !activeSurface || !pointerMotionEnabled()) return;
+        const rect = activeSurface.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const localX = Math.min(Math.max(pendingPointer.x - rect.left, 0), rect.width);
+        const localY = Math.min(Math.max(pendingPointer.y - rect.top, 0), rect.height);
+        const normalizedX = (localX / rect.width) - 0.5;
+        const normalizedY = (localY / rect.height) - 0.5;
+        activeSurface.style.setProperty('--pointer-x', `${(localX / rect.width) * 100}%`);
+        activeSurface.style.setProperty('--pointer-y', `${(localY / rect.height) * 100}%`);
+        if (activeMagnet === activeSurface) {
+            activeSurface.style.setProperty('--magnet-x', `${(normalizedX * 4.5).toFixed(2)}px`);
+            activeSurface.style.setProperty('--magnet-y', `${(normalizedY * 3.5).toFixed(2)}px`);
+        }
+    };
+
+    document.addEventListener('pointerover', event => {
+        if (!pointerMotionEnabled()) return;
+        const surface = event.target.closest(lightSurfaceSelector);
+        if (!surface || surface === activeSurface) return;
+        resetPointerSurface(activeSurface);
+        activeSurface = surface;
+        activeMagnet = surface.matches('.btn:not(:disabled):not([aria-disabled="true"])') ? surface : null;
+        surface.classList.add('is-pointer-active');
+    }, { passive: true });
+
+    document.addEventListener('pointermove', event => {
+        if (!activeSurface || !pointerMotionEnabled()) return;
+        pendingPointer = { x: event.clientX, y: event.clientY };
+        if (!pointerFrame) pointerFrame = requestAnimationFrame(renderPointerResponse);
+    }, { passive: true });
+
+    document.addEventListener('pointerout', event => {
+        if (!activeSurface || activeSurface.contains(event.relatedTarget)) return;
+        resetPointerSurface(activeSurface);
+        activeSurface = null;
+        activeMagnet = null;
+        pendingPointer = null;
+    }, { passive: true });
+
+    const clearPointerMotion = () => {
+        resetPointerSurface(activeSurface);
+        activeSurface = null;
+        activeMagnet = null;
+        pendingPointer = null;
+        if (pointerFrame) cancelAnimationFrame(pointerFrame);
+        pointerFrame = 0;
+        document.body.classList.toggle('motion-reduced', reducedMotionQuery.matches);
+        document.body.classList.add('motion-entered');
+    };
+    reducedMotionQuery.addEventListener('change', clearPointerMotion);
+    finePointerQuery.addEventListener('change', clearPointerMotion);
+
+    const pulseControl = (control, className, duration = 650) => {
+        if (!control || !motionEnabled()) return;
+        control.classList.remove(className);
+        requestAnimationFrame(() => control.classList.add(className));
+        window.setTimeout(() => control.classList.remove(className), duration);
+    };
+
+    document.addEventListener('click', event => {
+        const control = event.target.closest('button, .btn');
+        if (!control) return;
+        const actionText = `${control.id || ''} ${control.textContent || ''}`.toLowerCase();
+        if (/download|convert/.test(actionText)) pulseControl(control, 'is-activated');
+        if (/reset|clear/.test(actionText)) {
+            const workspace = control.closest('.tool-interface-body, .tool-workspace');
+            if (workspace && motionEnabled()) {
+                workspace.classList.add('is-resetting');
+                window.setTimeout(() => workspace.classList.remove('is-resetting'), 220);
+            }
+        }
+    });
+
     // 1. Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
     const sunIcon = document.querySelector('.sun-icon');
@@ -85,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 `).join('');
             } else {
-                searchResults.innerHTML = '<div class="search-result-item" role="option">No tools found for your search.</div>';
+                searchResults.innerHTML = '<div class="search-result-item search-result-empty" role="option">No tools found for your search.</div>';
             }
             searchResults.style.display = 'block';
             searchInput.setAttribute('aria-expanded', 'true');
@@ -167,7 +269,12 @@ document.addEventListener('DOMContentLoaded', () => {
             arcadeCards.forEach(card => {
                 const isVisible = selectedFilter === 'all' || card.dataset.category === selectedFilter;
                 card.hidden = !isVisible;
-                if (isVisible) visibleCount++;
+                card.classList.remove('is-filter-entering');
+                if (isVisible) {
+                    card.style.setProperty('--filter-order', String(Math.min(visibleCount, 8)));
+                    visibleCount++;
+                    if (motionEnabled()) requestAnimationFrame(() => card.classList.add('is-filter-entering'));
+                }
             });
 
             if (arcadeStatus) {
@@ -208,13 +315,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqs = document.querySelectorAll('.faq-question');
     faqs.forEach(faq => {
         faq.addEventListener('click', () => {
-            const parent = faq.parentElement;
+            const parent = faq.closest('.faq-item');
+            if (!parent) return;
             const isActive = parent.classList.contains('active');
             
-            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                const button = item.querySelector('button.faq-question');
+                if (button) button.setAttribute('aria-expanded', 'false');
+            });
             
             if (!isActive) {
                 parent.classList.add('active');
+                if (faq.matches('button')) faq.setAttribute('aria-expanded', 'true');
             }
         });
     });
@@ -234,31 +347,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             tabContents.forEach(c => {
                 c.classList.remove('active');
-                c.style.display = 'none';
+                c.hidden = true;
             });
             
             btn.classList.add('active');
             btn.setAttribute('aria-selected', 'true');
             btn.setAttribute('tabindex', '0');
             const target = document.getElementById(targetId);
-            target.classList.add('active');
-            target.style.display = 'block';
+            if (target) {
+                target.classList.add('active');
+                target.hidden = false;
+            }
         });
         
         // Keyboard nav for tabs
         btn.addEventListener('keydown', (e) => {
             let index = Array.from(tabBtns).indexOf(btn);
-            if(e.key === 'ArrowRight') {
+            if(e.key === 'ArrowRight' || e.key === 'ArrowDown') {
                 e.preventDefault();
                 index = (index + 1) % tabBtns.length;
                 tabBtns[index].focus();
                 tabBtns[index].click();
-            } else if (e.key === 'ArrowLeft') {
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                 e.preventDefault();
                 index = (index - 1 + tabBtns.length) % tabBtns.length;
                 tabBtns[index].focus();
                 tabBtns[index].click();
+            } else if (e.key === 'Home' || e.key === 'End') {
+                e.preventDefault();
+                index = e.key === 'Home' ? 0 : tabBtns.length - 1;
+                tabBtns[index].focus();
+                tabBtns[index].click();
             }
+        });
+    });
+
+    // Keyboard fallback for legacy upload zones that do not include a visible browse control.
+    document.querySelectorAll('.tool-page .drop-zone').forEach(dropZone => {
+        const fileInput = dropZone.querySelector('input[type="file"]');
+        const hasInteractiveControl = dropZone.querySelector('button, a, input:not([type="file"]), select, textarea');
+        if (!fileInput || hasInteractiveControl) return;
+
+        dropZone.setAttribute('role', 'button');
+        dropZone.setAttribute('tabindex', '0');
+        dropZone.setAttribute('aria-label', 'Choose a file or drop it here');
+        dropZone.addEventListener('keydown', event => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            fileInput.click();
         });
     });
 
@@ -275,8 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const toast = document.createElement('div');
         toast.className = 'toast';
         toast.textContent = msg;
-        if(type === 'error') toast.style.background = 'var(--error)';
-        if(type === 'success') toast.style.background = 'var(--success)';
+        toast.dataset.tone = type;
         
         container.appendChild(toast);
         
@@ -287,12 +422,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.copyToClipboard = function(text) {
+        const sourceControl = document.activeElement && document.activeElement.closest
+            ? document.activeElement.closest('button, .btn')
+            : null;
         navigator.clipboard.writeText(text).then(() => {
+            pulseControl(sourceControl, 'is-confirmed');
             window.showToast('Copied to clipboard!', 'success');
         }).catch(err => {
             console.error('Copy failed', err);
             window.showToast('Failed to copy', 'error');
         });
+    };
+
+    // Legacy tools receive the same non-blocking feedback without changing their logic.
+    window.alert = function(message) {
+        window.showToast(String(message), 'default');
     };
 
     // 7. Animated Stats
@@ -352,6 +496,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 9. Scroll Animations
     const animatedEls = document.querySelectorAll('.animate-on-scroll');
     if(animatedEls.length > 0) {
+        animatedEls.forEach(element => element.classList.add('motion-reveal-group'));
+        if (!motionEnabled()) {
+            animatedEls.forEach(element => element.classList.add('visible'));
+        }
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -360,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        animatedEls.forEach(el => scrollObserver.observe(el));
+        if (motionEnabled()) animatedEls.forEach(el => scrollObserver.observe(el));
     }
 
     // 10. Cookie Banner & Analytics Load

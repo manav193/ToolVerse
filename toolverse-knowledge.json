@@ -1,0 +1,1518 @@
+{
+  "version": "1.0.0",
+  "module": "toolverse",
+  "tools": [
+    {
+      "id": "emi-calculator",
+      "name": "EMI Calculator",
+      "category": "calculator",
+      "description": "Calculate your Equated Monthly Installment (EMI) with visual breakdowns.",
+      "route": "tools/emi-calculator.html",
+      "keywords": [
+        "emi calculator",
+        "loan calculator",
+        "home loan",
+        "personal loan",
+        "finance"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Visual bar chart for amounts",
+        "Detailed result table",
+        "Math formula explanation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "sip-calculator",
+      "name": "SIP Calculator",
+      "category": "calculator",
+      "description": "Calculate mutual fund returns on your Systematic Investment Plan.",
+      "route": "tools/sip-calculator.html",
+      "keywords": [
+        "sip calculator",
+        "mutual fund returns",
+        "investment calculator",
+        "finance"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Visual ratio bar",
+        "Detailed output table",
+        "Copy results feature"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "loan-calculator",
+      "name": "Loan Calculator",
+      "category": "calculator",
+      "description": "Determine your monthly payments and interest costs for any loan.",
+      "route": "tools/loan-calculator.html",
+      "keywords": [
+        "loan calculator",
+        "mortgage calculator",
+        "finance calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Visual breakdown",
+        "Input validation",
+        "Click to copy output"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "gst-calculator",
+      "name": "GST Calculator",
+      "category": "calculator",
+      "description": "Quickly add or remove GST from any amount.",
+      "route": "tools/gst-calculator.html",
+      "keywords": [
+        "gst calculator",
+        "tax calculator",
+        "add gst",
+        "remove gst"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Toggle between Add/Remove",
+        "Instant calculations",
+        "Shows CGST & SGST breakdown"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "discount-calculator",
+      "name": "Discount Calculator",
+      "category": "calculator",
+      "description": "Find out the final price after a percentage discount.",
+      "route": "tools/discount-calculator.html",
+      "keywords": [
+        "discount calculator",
+        "sale calculator",
+        "percentage off"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Visual summary",
+        "Money saved breakdown",
+        "One click copy"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "profit-calculator",
+      "name": "Profit Calculator",
+      "category": "calculator",
+      "description": "Calculate gross profit, margin, and markup percentages.",
+      "route": "tools/profit-calculator.html",
+      "keywords": [
+        "profit calculator",
+        "margin calculator",
+        "markup calculator",
+        "business calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Profit value display",
+        "Margin percentage",
+        "Markup percentage"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "margin-calculator",
+      "name": "Margin Calculator",
+      "category": "calculator",
+      "description": "Determine the selling price based on desired margin.",
+      "route": "tools/margin-calculator.html",
+      "keywords": [
+        "margin calculator",
+        "pricing calculator",
+        "selling price calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Selling price calculation",
+        "Gross profit calculation",
+        "Markup reference"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "percentage-difference-calculator",
+      "name": "Percentage Difference",
+      "category": "calculator",
+      "description": "Calculate the percentage difference between two numbers.",
+      "route": "tools/percentage-difference-calculator.html",
+      "keywords": [
+        "percentage difference",
+        "percentage change",
+        "math calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Calculates both Difference and Change",
+        "Formula display",
+        "Easy clipboard copy"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "compound-interest-calculator",
+      "name": "Compound Interest",
+      "category": "calculator",
+      "description": "Calculate wealth growth via compound interest over time.",
+      "route": "tools/compound-interest-calculator.html",
+      "keywords": [
+        "compound interest",
+        "investment calculator",
+        "APY calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Daily/Monthly/Yearly compounding",
+        "Instant updates",
+        "Clear math formula view"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "simple-interest-calculator",
+      "name": "Simple Interest",
+      "category": "calculator",
+      "description": "Calculate basic simple interest for loans and savings.",
+      "route": "tools/simple-interest-calculator.html",
+      "keywords": [
+        "simple interest",
+        "interest calculator",
+        "finance calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Visual breakdown",
+        "Total Amount formula",
+        "Quick copy outputs"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "salary-calculator",
+      "name": "Salary Calculator",
+      "category": "calculator",
+      "description": "Convert salary between hourly, weekly, monthly, and annual amounts.",
+      "route": "tools/salary-calculator.html",
+      "keywords": [
+        "salary calculator",
+        "hourly to annual",
+        "wage calculator",
+        "paycheck calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Supports multiple pay periods",
+        "Detailed breakdown",
+        "No signup required"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "tax-calculator",
+      "name": "Tax Calculator",
+      "category": "calculator",
+      "description": "Calculate generic flat-rate taxes, deductions, and net income.",
+      "route": "tools/tax-calculator.html",
+      "keywords": [
+        "tax calculator",
+        "net income",
+        "tax bracket",
+        "deductions"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Flat tax rate calculation",
+        "Deduction subtraction",
+        "Net income breakdown"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "name": "Fuel Cost Calculator",
+      "category": "calculator",
+      "description": "Calculate the total fuel cost and amount needed for a trip.",
+      "route": "tools/fuel-cost-calculator.html",
+      "keywords": [
+        "fuel cost calculator",
+        "gas calculator",
+        "trip cost",
+        "mpg calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Supports MPG and Km/L",
+        "Calculates total fuel needed",
+        "Cost breakdown"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "time-duration-calculator",
+      "name": "Time Duration Calculator",
+      "category": "calculator",
+      "description": "Calculate the hours and minutes between two times.",
+      "route": "tools/time-duration-calculator.html",
+      "keywords": [
+        "time calculator",
+        "duration calculator",
+        "time difference",
+        "hours passed"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Supports 24-hour time",
+        "Handles overnight shifts",
+        "Precise minute calculation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "date-difference-calculator",
+      "name": "Date Difference Calculator",
+      "category": "calculator",
+      "description": "Calculate the exact number of days, weeks, and years between two dates.",
+      "route": "tools/date-difference-calculator.html",
+      "keywords": [
+        "date calculator",
+        "days between dates",
+        "time difference",
+        "date difference"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Precise day calculation",
+        "Week and month breakdowns",
+        "Handles leap years natively"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "gpa-calculator",
+      "name": "GPA Calculator",
+      "category": "calculator",
+      "description": "Calculate your Grade Point Average (GPA) based on course credits and grades.",
+      "route": "tools/gpa-calculator.html",
+      "keywords": [
+        "gpa calculator",
+        "college gpa",
+        "grade point average",
+        "semester gpa"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Dynamic course rows",
+        "Standard 4.0 scale",
+        "Total credits summary"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "grade-calculator",
+      "name": "Final Grade Calculator",
+      "category": "calculator",
+      "description": "Find out what you need on your final exam to get your desired grade.",
+      "route": "tools/grade-calculator.html",
+      "keywords": [
+        "final grade calculator",
+        "exam calculator",
+        "what do i need on my final",
+        "grade calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Supports percentage grades",
+        "Clear formula explanation",
+        "Color-coded results"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "marks-percentage-calculator",
+      "name": "Marks Percentage Calculator",
+      "category": "calculator",
+      "description": "Convert test marks and scores into a percentage and letter grade.",
+      "route": "tools/marks-percentage-calculator.html",
+      "keywords": [
+        "percentage calculator",
+        "test score calculator",
+        "marks percentage",
+        "grade converter"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Accurate decimal calculation",
+        "Letter grade mapping",
+        "Simple interface"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "calorie-calculator",
+      "name": "Calorie Calculator",
+      "category": "calculator",
+      "description": "Calculate your daily calorie needs for weight loss, maintenance, or weight gain.",
+      "route": "tools/calorie-calculator.html",
+      "keywords": [
+        "calorie calculator",
+        "tdee calculator",
+        "daily calories",
+        "macro calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Uses Mifflin-St Jeor formula",
+        "Activity level multiplier",
+        "Weight goal adjustments"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "bmr-calculator",
+      "name": "BMR Calculator",
+      "category": "calculator",
+      "description": "Calculate your Basal Metabolic Rate (BMR).",
+      "route": "tools/bmr-calculator.html",
+      "keywords": [
+        "bmr calculator",
+        "basal metabolic rate",
+        "resting calories",
+        "metabolism calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Calculates using Mifflin-St Jeor",
+        "Calculates using Harris-Benedict",
+        "Detailed breakdown"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter & Validator",
+      "category": "developer",
+      "description": "Format and validate JSON data instantly.",
+      "route": "tools/json-formatter.html",
+      "keywords": [
+        "json formatter",
+        "json validator",
+        "beautify json",
+        "format json"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Indentation control",
+        "Syntax error highlighting"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "xml-formatter",
+      "name": "XML Formatter",
+      "category": "developer",
+      "description": "Format and beautify XML strings.",
+      "route": "tools/xml-formatter.html",
+      "keywords": [
+        "xml formatter",
+        "beautify xml",
+        "xml beautifier"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Proper indentation",
+        "Fast parsing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "html-formatter",
+      "name": "HTML Formatter",
+      "category": "developer",
+      "description": "Format and beautify HTML code online.",
+      "route": "tools/html-formatter.html",
+      "keywords": [
+        "html formatter",
+        "html beautifier",
+        "format html"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Prettier integration",
+        "Syntax formatting"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "css-formatter",
+      "name": "CSS Formatter",
+      "category": "developer",
+      "description": "Format and beautify CSS code online.",
+      "route": "tools/css-formatter.html",
+      "keywords": [
+        "css formatter",
+        "css beautifier",
+        "format css"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Prettier integration",
+        "Syntax formatting"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "javascript-formatter",
+      "name": "JavaScript Formatter",
+      "category": "developer",
+      "description": "Format and beautify JS code online.",
+      "route": "tools/javascript-formatter.html",
+      "keywords": [
+        "js formatter",
+        "javascript beautifier",
+        "format js"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Prettier integration",
+        "Syntax formatting"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "category": "developer",
+      "description": "Minify CSS code to reduce file size.",
+      "route": "tools/css-minifier.html",
+      "keywords": [
+        "css minifier",
+        "compress css",
+        "minify css"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Removes comments",
+        "Removes whitespace"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "javascript-minifier",
+      "name": "JavaScript Minifier",
+      "category": "developer",
+      "description": "Minify JavaScript using Terser.",
+      "route": "tools/javascript-minifier.html",
+      "keywords": [
+        "js minifier",
+        "compress js",
+        "minify js"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Terser integration",
+        "Variable mangling"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "html-minifier",
+      "name": "HTML Minifier",
+      "category": "developer",
+      "description": "Minify HTML code to reduce file size.",
+      "route": "tools/html-minifier.html",
+      "keywords": [
+        "html minifier",
+        "compress html",
+        "minify html"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Removes comments",
+        "Removes whitespace"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "sql-formatter",
+      "name": "SQL Formatter",
+      "category": "developer",
+      "description": "Format and beautify SQL queries.",
+      "route": "tools/sql-formatter.html",
+      "keywords": [
+        "sql formatter",
+        "sql beautifier",
+        "format sql"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "SQL parsing",
+        "Syntax indentation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "regex-tester",
+      "name": "Regex Tester",
+      "category": "developer",
+      "description": "Test regular expressions against target text.",
+      "route": "tools/regex-tester.html",
+      "keywords": [
+        "regex tester",
+        "regular expression",
+        "test regex"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Custom flags",
+        "Live highlight"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "uuid-generator",
+      "name": "UUID Generator",
+      "category": "developer",
+      "description": "Generate random UUIDs (v4) quickly and easily.",
+      "route": "tools/uuid-generator.html",
+      "keywords": [
+        "uuid generator",
+        "guid generator",
+        "uuid v4",
+        "random uuid",
+        "developer tools"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Single and bulk UUID generation",
+        "Copy to clipboard",
+        "No server-side processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "hash-generator",
+      "name": "Hash Generator",
+      "category": "developer",
+      "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes instantly.",
+      "route": "tools/hash-generator.html",
+      "keywords": [
+        "hash generator",
+        "md5 hash",
+        "sha256 hash",
+        "sha1 generator",
+        "sha512 generator",
+        "crypto hash"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "MD5 generation via CryptoJS",
+        "SHA-1, SHA-256, SHA-512 via Native Web Crypto API",
+        "Auto-update on typing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "base64-encode",
+      "name": "Base64 Encode",
+      "category": "developer",
+      "description": "Encode text to Base64 format.",
+      "route": "tools/base64-encode.html",
+      "keywords": [
+        "base64 encode",
+        "text to base64",
+        "base64 encoder",
+        "online base64 tool"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Native btoa() implementation",
+        "Copy result easily"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "base64-decode",
+      "name": "Base64 Decode",
+      "category": "developer",
+      "description": "Decode Base64 format to plain text.",
+      "route": "tools/base64-decode.html",
+      "keywords": [
+        "base64 decode",
+        "base64 to text",
+        "base64 decoder",
+        "online base64 tool"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Native atob() implementation",
+        "Robust error handling for invalid strings"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "url-encode-decode",
+      "name": "URL Encode / Decode",
+      "category": "developer",
+      "description": "Encode or decode URL components easily.",
+      "route": "tools/url-encode-decode.html",
+      "keywords": [
+        "url encode",
+        "url decode",
+        "uri encode",
+        "url encoder online"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Native encodeURIComponent / decodeURIComponent",
+        "Real-time output updates"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "jwt-decoder",
+      "name": "JWT Decoder",
+      "category": "developer",
+      "description": "Decode JSON Web Tokens (JWT) payload instantly.",
+      "route": "tools/jwt-decoder.html",
+      "keywords": [
+        "jwt decoder",
+        "decode jwt",
+        "jwt parser",
+        "json web token tool"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Splits JWT into parts",
+        "Decodes Base64Url",
+        "Formats JSON"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Unix Timestamp Converter",
+      "category": "developer",
+      "description": "Convert Unix timestamps to dates and vice versa.",
+      "route": "tools/timestamp-converter.html",
+      "keywords": [
+        "timestamp converter",
+        "unix epoch",
+        "epoch converter",
+        "date to timestamp"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Convert Timestamp to Date",
+        "Convert Date to Timestamp",
+        "Current Timestamp generation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "QR Code Generator",
+      "category": "developer",
+      "description": "Generate customizable QR codes for links, text, and data.",
+      "route": "tools/qr-code-generator.html",
+      "keywords": [
+        "qr code generator",
+        "create qr code",
+        "free qr code",
+        "url to qr code"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Uses QRCode.js library",
+        "Generates standard QR format",
+        "Downloadable output"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "barcode-generator",
+      "name": "Barcode Generator",
+      "category": "developer",
+      "description": "Generate standard barcodes instantly.",
+      "route": "tools/barcode-generator.html",
+      "keywords": [
+        "barcode generator",
+        "create barcode",
+        "code128 generator",
+        "free barcode maker"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Uses JsBarcode library",
+        "Live preview",
+        "PNG download"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "color-converter",
+      "name": "Color Picker & Converter",
+      "category": "developer",
+      "description": "Pick colors and convert between HEX, RGB, HSL, and CMYK.",
+      "route": "tools/color-converter.html",
+      "keywords": [
+        "color converter",
+        "hex to rgb",
+        "rgb to hex",
+        "color picker online",
+        "hex to hsl",
+        "cmyk converter"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "HTML5 Color Input",
+        "RGB & HSL Parsing",
+        "CMYK estimation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "compress-image",
+      "name": "Compress Image",
+      "category": "image",
+      "description": "Reduce image file size instantly with an adjustable quality slider. Great for optimizing web performance and saving storage space.",
+      "route": "tools/compress-image.html",
+      "keywords": [
+        "compress image",
+        "image optimizer",
+        "reduce image size",
+        "jpeg compressor"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Adjustable quality slider",
+        "Real-time preview",
+        "Before/After size comparison",
+        "Fast local processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "crop-image",
+      "name": "Crop Image",
+      "category": "image",
+      "description": "Crop your images online for free. Adjust aspect ratios or crop freely to get the perfect frame.",
+      "route": "tools/crop-image.html",
+      "keywords": [
+        "crop image",
+        "image cropper",
+        "photo cutter",
+        "trim image"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Free-form cropping",
+        "Lock aspect ratio (1:1)",
+        "Intuitive drag interface",
+        "Instant preview"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "png-to-jpg",
+      "name": "PNG to JPG Converter",
+      "category": "image",
+      "description": "Convert PNG images to JPG format instantly. Transparent backgrounds will be automatically converted to white.",
+      "route": "tools/png-to-jpg.html",
+      "keywords": [
+        "png to jpg",
+        "convert png",
+        "image converter",
+        "transparent to white"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Instant conversion",
+        "Fills transparency with white",
+        "High quality export"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "webp-converter",
+      "name": "WebP Converter",
+      "category": "image",
+      "description": "Convert images to the modern WebP format for superior compression and web performance.",
+      "route": "tools/webp-converter.html",
+      "keywords": [
+        "webp converter",
+        "convert to webp",
+        "image to webp",
+        "modern image format"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "High-efficiency WebP export",
+        "Works entirely in your browser",
+        "Fast processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "rotate-image",
+      "name": "Rotate Image",
+      "category": "image",
+      "description": "Rotate your images left or right by 90 degrees instantly.",
+      "route": "tools/rotate-image.html",
+      "keywords": [
+        "rotate image",
+        "turn photo",
+        "image rotator",
+        "90 degrees"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "90-degree clockwise & counter-clockwise rotation",
+        "Instant preview",
+        "No quality loss"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "flip-image",
+      "name": "Flip Image",
+      "category": "image",
+      "description": "Mirror your images horizontally or vertically with a single click.",
+      "route": "tools/flip-image.html",
+      "keywords": [
+        "flip image",
+        "mirror image",
+        "horizontal flip",
+        "vertical flip"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Horizontal flipping",
+        "Vertical flipping",
+        "Instant preview"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "blur-image",
+      "name": "Blur Image",
+      "category": "image",
+      "description": "Apply a customizable blur effect to your images for creative purposes or to hide sensitive information.",
+      "route": "tools/blur-image.html",
+      "keywords": [
+        "blur image",
+        "censor image",
+        "gaussian blur",
+        "blur photo"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Adjustable blur intensity (0-50px)",
+        "Real-time preview",
+        "Smooth Gaussian blur"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "bg-color-changer",
+      "name": "Background Color Changer",
+      "category": "image",
+      "description": "Replace transparent backgrounds in PNG images with solid colors or beautiful gradients.",
+      "route": "tools/bg-color-changer.html",
+      "keywords": [
+        "background color changer",
+        "add background to png",
+        "transparent to color"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Solid color picker",
+        "Linear gradient creator",
+        "Preserves foreground image"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "image-watermark",
+      "name": "Image Watermark",
+      "category": "image",
+      "description": "Add a custom text watermark to your images to protect your copyright and brand.",
+      "route": "tools/image-watermark.html",
+      "keywords": [
+        "image watermark",
+        "add watermark",
+        "copyright photo",
+        "text on image"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Customizable text",
+        "Adjustable color and opacity",
+        "5 positioning options"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "ico-generator",
+      "name": "ICO Generator",
+      "category": "image",
+      "description": "Create standard .ICO favicon files from your images, or download a ZIP of standard PNG sizes.",
+      "route": "tools/ico-generator.html",
+      "keywords": [
+        "ico generator",
+        "favicon creator",
+        "generate ico",
+        "png to ico"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Generates standard sizes: 16, 32, 48, 64, 128, 256",
+        "Outputs true .ICO binary file",
+        "Option to download as PNG ZIP package"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "resize-image",
+      "name": "Image Resizer",
+      "category": "image",
+      "description": "Resize images to exact pixel dimensions securely in your browser",
+      "route": "tools/resize-image.html",
+      "keywords": [
+        "image resizer",
+        "resize image online",
+        "change image dimensions",
+        "photo resizer",
+        "client-side image editor"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Client-side processing (100% Private)",
+        "Aspect ratio locking",
+        "Drag & drop support"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "jpg-to-png",
+      "name": "JPG to PNG Converter",
+      "category": "image",
+      "description": "Convert JPEG images to transparent PNG format quickly",
+      "route": "tools/jpg-to-png.html",
+      "keywords": [
+        "jpg to png",
+        "convert jpeg to png",
+        "image format converter",
+        "free image converter"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Browser-based instant conversion",
+        "No upload needed",
+        "Preserves original resolution"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "merge-pdf",
+      "name": "Merge PDF",
+      "category": "pdf",
+      "description": "Combine multiple PDF files into one single document",
+      "route": "tools/merge-pdf.html",
+      "keywords": [
+        "merge pdf",
+        "combine pdf",
+        "join pdf files"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Drag & drop ordering",
+        "Client-side processing",
+        "Instant merge"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "split-pdf",
+      "name": "Split PDF",
+      "category": "pdf",
+      "description": "Extract pages from your PDF or split into multiple files",
+      "route": "tools/split-pdf.html",
+      "keywords": [
+        "split pdf",
+        "extract pdf pages",
+        "separate pdf"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Range selection",
+        "Client-side processing",
+        "Instant split"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "optimize-pdf",
+      "name": "Optimize PDF",
+      "category": "pdf",
+      "description": "Compress PDF size by stripping metadata and optimizing object streams",
+      "route": "tools/optimize-pdf.html",
+      "keywords": [
+        "optimize pdf",
+        "compress pdf",
+        "reduce pdf size",
+        "remove pdf metadata"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Metadata stripping",
+        "Object stream optimization",
+        "Client-side processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "jpg-to-pdf",
+      "name": "JPG to PDF",
+      "category": "pdf",
+      "description": "Convert JPG images to PDF document",
+      "route": "tools/jpg-to-pdf.html",
+      "keywords": [
+        "jpg to pdf",
+        "image to pdf",
+        "convert jpg to pdf"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "A4 page creation",
+        "Drag and drop ordering",
+        "Multiple image support"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "pdf-to-jpg",
+      "name": "PDF to JPG",
+      "category": "pdf",
+      "description": "Convert PDF pages to JPG images",
+      "route": "tools/pdf-to-jpg.html",
+      "keywords": [
+        "pdf to jpg",
+        "pdf to images",
+        "extract pdf pages to jpg"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Canvas rendering",
+        "Download individual pages",
+        "Client-side processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "rotate-pdf",
+      "name": "Rotate PDF",
+      "category": "pdf",
+      "description": "Rotate PDF pages by 90, 180, or 270 degrees",
+      "route": "tools/rotate-pdf.html",
+      "keywords": [
+        "rotate pdf",
+        "change pdf orientation"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "90, 180, 270 degrees",
+        "Client-side processing",
+        "Instant result"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "delete-pdf-pages",
+      "name": "Delete PDF Pages",
+      "category": "pdf",
+      "description": "Remove specific pages from your PDF file",
+      "route": "tools/delete-pdf-pages.html",
+      "keywords": [
+        "delete pdf pages",
+        "remove pdf pages",
+        "delete pages from pdf"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Comma-separated input",
+        "Client-side processing",
+        "Instant removal"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "extract-pdf-pages",
+      "name": "Extract PDF Pages",
+      "category": "pdf",
+      "description": "Extract specific pages from a PDF to create a new one",
+      "route": "tools/extract-pdf-pages.html",
+      "keywords": [
+        "extract pdf pages",
+        "keep pdf pages",
+        "select pdf pages"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Comma-separated input",
+        "Client-side processing",
+        "Instant extraction"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "watermark-pdf",
+      "name": "Watermark PDF",
+      "category": "pdf",
+      "description": "Add a text watermark diagonally to all PDF pages",
+      "route": "tools/watermark-pdf.html",
+      "keywords": [
+        "watermark pdf",
+        "add text to pdf",
+        "stamp pdf"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Diagonal placement",
+        "Applies to all pages",
+        "Client-side processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "add-page-numbers",
+      "name": "Add Page Numbers",
+      "category": "pdf",
+      "description": "Add page numbers to the bottom of your PDF document",
+      "route": "tools/add-page-numbers.html",
+      "keywords": [
+        "add page numbers pdf",
+        "paginate pdf",
+        "insert page numbers"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "local",
+      "capabilities": [
+        "Bottom center placement",
+        "Customizable font",
+        "Client-side processing"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "attendance-calculator",
+      "name": "Attendance Calculator",
+      "category": "student",
+      "description": "Calculate how many classes you need to attend or can skip",
+      "route": "tools/attendance-calculator.html",
+      "keywords": [
+        "attendance calculator",
+        "calculate attendance",
+        "college attendance",
+        "school attendance target"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Calculates classes needed to attend",
+        "Calculates classes safe to skip",
+        "Color-coded visual feedback"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "category": "student",
+      "description": "Solve percentage problems, find percent change, increase and decrease",
+      "route": "tools/percentage-calculator.html",
+      "keywords": [
+        "percentage calculator",
+        "percent change",
+        "what is x percent of y",
+        "calculate percentage"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Find X% of Y",
+        "Find what % X is of Y",
+        "Calculate percentage change/difference"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "category": "student",
+      "description": "Calculate your exact age in years, months, and days",
+      "route": "tools/age-calculator.html",
+      "keywords": [
+        "age calculator",
+        "exact age",
+        "calculate age from date of birth",
+        "date difference calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Exact years, months, and days",
+        "Total months breakdown",
+        "Total weeks and days calculations"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "bmi-calculator",
+      "name": "BMI Calculator",
+      "category": "student",
+      "description": "Check your Body Mass Index (BMI) easily with standard metrics",
+      "route": "tools/bmi-calculator.html",
+      "keywords": [
+        "bmi calculator",
+        "body mass index",
+        "check bmi",
+        "ideal weight calculator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Metric and Imperial support",
+        "Instant calculation",
+        "Color-coded health status category"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "word-counter",
+      "name": "Word Counter",
+      "category": "text",
+      "description": "Count words, characters, sentences and paragraphs instantly",
+      "route": "tools/word-counter.html",
+      "keywords": [
+        "word counter",
+        "character counter",
+        "word count online",
+        "text statistics"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Real-time counting",
+        "Reading time estimate",
+        "Paragraph detection"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "character-counter",
+      "name": "Character Counter",
+      "category": "text",
+      "description": "Count characters with or without spaces and get detailed text density",
+      "route": "tools/character-counter.html",
+      "keywords": [
+        "character counter",
+        "character count",
+        "letter counter",
+        "character density",
+        "count letters online"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Counts spaces separately",
+        "UTF-8 Byte size calculation",
+        "Fast and real-time"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "category": "text",
+      "description": "Easily convert text to uppercase, lowercase, title case, and more",
+      "route": "tools/case-converter.html",
+      "keywords": [
+        "case converter",
+        "uppercase to lowercase",
+        "title case converter",
+        "text case change"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "8+ case formatting options",
+        "Developer-friendly cases (snake_case, camelCase)",
+        "One-click copy"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "remove-duplicate-lines",
+      "name": "Remove Duplicate Lines",
+      "category": "text",
+      "description": "Instantly find and remove duplicate lines from your text lists",
+      "route": "tools/remove-duplicate-lines.html",
+      "keywords": [
+        "remove duplicate lines",
+        "line deduplicator",
+        "text cleaner",
+        "unique list generator"
+      ],
+      "acceptedFormats": [],
+      "outputFormats": [],
+      "processingMode": "unspecified",
+      "capabilities": [
+        "Case sensitive option",
+        "Trim whitespace option",
+        "Alphabetical sorting",
+        "Instant processing"
+      ],
+      "limitations": []
+    }
+  ]
+}
