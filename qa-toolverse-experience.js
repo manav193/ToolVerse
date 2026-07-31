@@ -13,8 +13,11 @@ if(!entry.includes('initToolVerseExperience();'))fail('adaptive entry does not i
 if(!build.includes('js/adaptive-entry.js'))fail('generated pages do not load adaptive-entry.js');
 [
   'data-tv-command','data-tv-favorites','data-tv-density','data-tv-reset',
-  'data-tv-favorite-tool','data-tv-recent','data-tv-network','toolverse:favorites'
+  'data-tv-favorite-tool','data-tv-recent','data-tv-network'
 ].forEach(token=>{if(!moduleSource.includes(token))fail(`missing runtime contract: ${token}`)});
+if(!moduleSource.includes("const STORAGE_PREFIX='toolverse:'"))fail('missing ToolVerse storage namespace');
+if(!moduleSource.includes("read('favorites',[])"))fail('favorites are not restored from local storage');
+if(!moduleSource.includes("write('favorites',[...state.favorites])"))fail('favorites are not persisted to local storage');
 [
   '.tv-productivity-bar','.tv-recent-grid','.tv-favorite-button',
   '.tv-command-backdrop','.tv-network-status','[data-tool-density=compact]'
